@@ -5,11 +5,11 @@ var repl = REPL.start(' > ');
 
 repl.context.db = db;
 
-db.Supper.collection.remove();
-db.User.collection.remove();
-db.Address.collection.remove();
+db.base.models.Supper.collection.remove();
+db.base.models.User.collection.remove();
+db.base.models.Address.collection.remove();
 
-db.Supper.create({
+db.base.models.Supper.create({
   address: {
     firstLine: '21',
     secondLine: 'High Street',
@@ -21,7 +21,7 @@ db.Supper.create({
   console.log(supper);
 });
 
-db.User.create({
+db.base.models.User.create({
   name: 'Anna Gaughan',
   password: 'anna',
   email: 'anna@anna.com'
