@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>SupperClub App</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="javascript/search.js"></script>
 </head>
 <body>
   <h1>SupperClub App!</h1>
     <div class="page-wrapper">
-      <form id="search-form">
+      <form action="/" method="POST" id="search-form">
        <input name="location" class="form-input" placeholder="Location">
-       <button type="submit" class="form-submit">Search</button>
-       
+       <button type="submit" class="form-submit" value="search">Search</button> 
       </form>
    
      
    </div>
 
 </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="javascript/search.js"></script>
 </html>
