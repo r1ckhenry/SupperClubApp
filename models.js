@@ -20,3 +20,12 @@ var addressSchema = ({
   city: String,
   postCode: String
 });
+
+var User = mongoose.model('User', UserSchema);
+var Supper = mongoose.model('Supper', SupperSchema);
+var Address = mongoose.model('Address', AddressSchema);
+
+module.exports.User = User;
+module.exports.Supper = Supper;
+module.exports.Address = Address;
+
