@@ -4,6 +4,7 @@ var morgan = require('morgan');
 var server = require('http').createServer(app);
 var bodyParser = require('body-parser');
 var port = process.env.PORT || 3000;
+var db = require('./app/models/models')
 
 app.set('views', './views');
 app.set('view engine', 'ejs');
@@ -22,8 +23,14 @@ app.get('/searchresults', function(req, res){
 
 app.post('/', function(req,res){
   var newSupper = req.body;
-  console.log(newSupper);
-})
+  db.Supper.find({ 
+    'address.city': req.body.location
+  }, function(err, city){
+    console.log(city);
+    res.send(city);
+  });
+
+});
 
 
 app.listen(port, function(req,res){
