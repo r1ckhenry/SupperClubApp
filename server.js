@@ -17,10 +17,13 @@ app.get('/', function(req, res) {
   res.render('index')
 });
 
+app.get('/searchresults', function(req, res){
+  res.render('searchresults')
+})
 
 
 app.listen(port, function(req,res){
-  console.log('arse ' + port)
+  console.log('Running on' + port)
 });
 
 
