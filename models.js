@@ -1,25 +1,25 @@
 var mongoose =  require('mongoose');
-mongoose.connect("mongodb://localhost/supperdb");
+mongoose.connect("mongodb://localhost/supperdatabase");
 
 var UserSchema = new mongoose.Schema({
   name: String,
   password: String,
   email: String,
-  suppersCreated: [],
-  suppersAttending: []
+  suppersCreated: Array,
+  suppersAttending: Array
 });
 
-var SupperSchema = ({
-  address: [addressSchema],
-  date: Date
-});
-
-var addressSchema = ({
+var AddressSchema = new mongoose.Schema({
   firstLine: String,
   secondLine: String,
   city: String,
   postCode: String
 });
+
+var SupperSchema = new mongoose.Schema({
+  address: [AddressSchema],
+  date: String
+}); 
 
 var User = mongoose.model('User', UserSchema);
 var Supper = mongoose.model('Supper', SupperSchema);
