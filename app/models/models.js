@@ -9,7 +9,10 @@ var UserSchema = new mongoose.Schema({
   password: String,
   email: String,
   suppersCreated: Array,
-  suppersAttending: Array
+  suppersAttending: Array,
+  payments: Array,
+  faveCuisines: Array,
+  allReviews: Array
 });
 
 var AddressSchema = new mongoose.Schema({
@@ -19,9 +22,21 @@ var AddressSchema = new mongoose.Schema({
   postCode: String
 });
 
+var MenuSchema = new mongoose.Schema({
+  veggie: Boolean,
+  vegan: Boolean,
+  dishes: Array,
+  cuisine: Array,
+  drinks: Array
+});
+
 var SupperSchema = new mongoose.Schema({
   address: [AddressSchema],
-  date: String
+  menu: [MenuSchema],
+  date: Date,
+  description: String,
+  dressCode: String,
+  reviews: Array
 }); 
 
 // methods ======================
@@ -38,5 +53,6 @@ UserSchema.methods.validPassword = function(password) {
 module.exports = {
   User: mongoose.model('User', UserSchema),
   Supper: mongoose.model('Supper', SupperSchema),
-  Address: mongoose.model('Address', AddressSchema)
+  Address: mongoose.model('Address', AddressSchema),
+  Menu: mongoose.model('Menu', MenuSchema)
 }
