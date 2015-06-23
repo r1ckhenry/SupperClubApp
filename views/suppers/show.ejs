@@ -10,6 +10,9 @@
   <p><%= supper.menu[0].drinks %></p>
   <p><%= supper.menu[0].cuisine %></p>
   <p><%= supper.menu[0].dishes %></p>
-  <p></p>
+  <form action="/suppers/<%=supper._id%>" method="POST"> 
+    <input type="submit" value="attend">
+  </form>
+  <!-- <button id="attend-supper">Attend This Supper</button> -->
 </body>
 </html>

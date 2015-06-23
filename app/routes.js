@@ -59,6 +59,61 @@ module.exports = function(app, passport, db) {
         });
     });
 
+
+    //**************************
+    //   SUPPERS SECTION
+    //************************
+
+    app.get('/suppers/new', isLoggedIn, function(req, res){
+        res.render('suppers/new.ejs');
+    });
+
+    app.get('/suppers/:id', isLoggedIn, function(req, res) {
+        db.Supper.findById(req.params.id, function(err, supper){
+            res.render('suppers/show.ejs', {
+        supper: supper
+        });
+    })
+  });
+    
+    app.post('/suppers/:id', isLoggedIn, function(req, res){
+        // req.user.suppersAttending.push(req.params.id);
+         db.User.update(req.params.id, {suppersAttending:req.user.suppersAttending.push(req.params.id)}, function(err, user){
+            console.log(err)
+            console.log(user)
+         })
+        // console.log(req.params.id)
+        // console.log(req.user)
+    })
+
+    app.post('/suppers', function(req, res) {
+    var user = req.user;
+    var sup = req.body;
+    db.Supper.create({
+      description : sup.description,
+      dressCode: sup.dressCode,
+      address: {
+        firstLine: sup.firstLine,
+        secondLine: sup.secondLine,
+        city: sup.city,
+        postCode: sup.postCode
+      },
+      menu: {
+        dishes: sup.dishes,
+        cuisine: sup.cuisine,
+        drinks: sup.drinks
+      }
+    }, function(err, supper){
+        req.user.suppersCreated.push(supper._id);
+        console.log(req.user);
+        res.redirect('/suppers');
+    });
+  })
+
+
+
+
+
     app.get('/profile/edit', isLoggedIn, function(req, res){
         res.render('profile/edit.ejs', {
             user : req.user
