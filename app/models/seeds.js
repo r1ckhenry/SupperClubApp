@@ -1,35 +1,51 @@
 var REPL = require('repl');
 var db = require('./models');
 
+
 var repl = REPL.start(' > ');
 
 repl.context.db = db;
 
-db.base.models.Supper.collection.remove();
-db.base.models.User.collection.remove();
-db.base.models.Address.collection.remove();
+db.Supper.collection.remove();
+db.User.collection.remove();
+db.Address.collection.remove();
 
-db.base.models.Supper.create({
+db.Supper.create({
   address: {
     firstLine: '21',
     secondLine: 'High Street',
     city: 'Galway',
     postCode: 'EH6 4BQ'
   },
-  date: '24/07/2015'
+  menu: {
+    veggie: true,
+    vegan: false,
+    dishes: ["bangers and mash", "chocolate cake"]
+  }
 }, function(err, supper){
+  console.log("********");
   console.log(supper);
 });
 
-db.base.models.User.create({
+db.User.create({
   name: 'Anna Gaughan',
   password: 'anna',
   email: 'anna@anna.com'
 }, function(err, user){
+  console.log("inside user create");
   console.log(user);
 });
 
-console.log('Seeded')
+db.Supper.create({
+  description: "Yummy"
+}, function(err, supper){
+  console.log("inside supper create");
+  console.log(supper);
+});
+
+
+
+// console.log('Seeded')
 
 
 

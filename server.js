@@ -53,11 +53,11 @@ app.get('/', function(req, res) {
 });
 
 app.get('/searchresults', function(req, res){
-  res.render('searchresults')
+  console.log(res.body);
+  res.send('Hello');
 }); 
 
-app.post('/', function(req,res){
-  var newSupper = req.body;
+app.post('/searchresults', function(req,res){
   db.Supper.find({ 
     'address.city': req.body.location
   }, function(err, city){

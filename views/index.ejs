@@ -10,10 +10,12 @@
   <h1>SupperClub App!</h1>
     <a href="/suppers">All suppers</a>
     <div class="page-wrapper">
-      <form action="/" method="POST" id="search-form">
+      <form action="/searchresults" method="POST" id="search-form">
        <input name="location" class="form-input" placeholder="Location">
-       <button type="submit" class="form-submit" value="search">Search</button> 
+       <input type="submit" class="form-submit" value="search">
       </form>
+      <div class="searchresults">
+      </div>
    
      
    </div>
