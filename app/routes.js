@@ -77,13 +77,10 @@ module.exports = function(app, passport, db) {
   });
     
     app.post('/suppers/:id', isLoggedIn, function(req, res){
-        // req.user.suppersAttending.push(req.params.id);
         req.user.suppersAttending.push(req.params.id);
         req.user.save(function(err){
             console.log(err);
         });
-        // console.log(req.params.id)
-        // console.log(req.user)
     })
 
     app.post('/suppers', function(req, res) {
@@ -105,7 +102,10 @@ module.exports = function(app, passport, db) {
       }
     }, function(err, supper){
         req.user.suppersCreated.push(supper._id);
-        console.log(req.user);
+        console.log(supper);
+        req.user.save(function(err){
+            console.log(err);
+        });
         res.redirect('/suppers');
     });
   })
