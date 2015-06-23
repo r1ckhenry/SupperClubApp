@@ -56,7 +56,7 @@ app.get('/searchresults', function(req, res){
 
 app.post('/', function(req,res){
   var newSupper = req.body;
-  db.base.models.Supper.find({ 
+  db.Supper.find({ 
     'address.city': req.body.location
   }, function(err, city){
     res.send(city);
