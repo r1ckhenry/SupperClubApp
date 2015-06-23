@@ -58,14 +58,17 @@ app.get('/searchresults', function(req, res){
 }); 
 
 app.post('/searchresults', function(req,res){
-  db.Supper.find({ 
-    'address.city': req.body.location
-  }, function(err, city){
-    res.send(city);
-    console.log(city);
-  });
+ db.Supper.find({ 
+   'address.city': req.body.location
+ }, function(err, city){
+   res.send(city);
+   console.log(city);
+ });
 
 });
+
+
+
 
 
 app.listen(port, function(req,res){
