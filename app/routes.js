@@ -113,7 +113,6 @@ module.exports = function(app, passport, db) {
 
 
 
-
     app.get('/profile/edit', isLoggedIn, function(req, res){
         res.render('profile/edit.ejs', {
             user : req.user
