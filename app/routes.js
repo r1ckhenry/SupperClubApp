@@ -78,10 +78,10 @@ module.exports = function(app, passport, db) {
     
     app.post('/suppers/:id', isLoggedIn, function(req, res){
         // req.user.suppersAttending.push(req.params.id);
-         db.User.update(req.params.id, {suppersAttending:req.user.suppersAttending.push(req.params.id)}, function(err, user){
-            console.log(err)
-            console.log(user)
-         })
+        req.user.suppersAttending.push(req.params.id);
+        req.user.save(function(err){
+            console.log(err);
+        });
         // console.log(req.params.id)
         // console.log(req.user)
     })
