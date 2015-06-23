@@ -5,9 +5,38 @@
   <title>Hello World</title>
 <script src="javascript/suppers.js"></script></head>
 <body>
-  <h1><%= supper[0].address[0].firstLine %></h1>
+  <% for (var i = 0; i < supper.length; i++) { %>
+    <a href="/suppers/<%= supper[i].id %>"<p><%= supper[i].description %> </p></a>
+    <p><%= supper[i].dressCode %> </p>
+    <h4>Menu:</h4>
+    <p>Drinks: <%= supper[i].menu[0].drinks %> </p>
+    <p>Cuisine: <%= supper[i].menu[0].cuisine %> </p>
+    <p>Dishes: <%= supper[i].menu[0].dishes %> </p>
+
+    <form action="/suppers/<%= supper[i]._id %>" method="POST">
+      <input type="submit" value="delete">
+    </form>
+  <% }; %>
 
 <button id="supper-add"><a href="/suppers/new">Add a Supper</a></button>
 
 </body>
 </html>
+
+<!-- { 
+  _id: 5589681782c4a68e39a0c014, 
+  description: 'Join me', 
+  dressCode: 'Casual', 
+  __v: 0, 
+  reviews: [], 
+  menu: [ { 
+    _id: 5589681782c4a68e39a0c015, 
+    drinks: [Object], 
+    cuisine: [Object], 
+    dishes: [Object] } ], 
+  address: [ { 
+    firstLine: '66', 
+    secondLine: 'Hanbury Street', 
+    city: 'London', 
+    postCode: '4RD 6HY', 
+    _id: 5589681782c4a68e39a0c016 } ] } -->
