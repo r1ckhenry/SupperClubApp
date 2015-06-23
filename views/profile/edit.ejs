@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World</title>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="/javascript/profileSelect.js"></script>
+</head>
+<body>
+  
+  <form action="/profile" method="POST">
+    <label>Name:</label>
+    <input id="editName" name="name" type="text" placeholder="<%= user.name %>">
+    <label>email:</label>
+    <input id="editEmail" name="email" type="text" placeholder="<%= user.email %>">
+    <label>favourite cuisines:</label>
+    <select name="cuisine" id="showCuisines"></select>
+    <input type="submit">
+  </form>
+</body>
+</html>

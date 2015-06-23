@@ -1,5 +1,6 @@
 // app/routes.js
-module.exports = function(app, passport) {
+module.exports = function(app, passport, db) {
+
 
     // =====================================
     // HOME PAGE (with login links) ========
@@ -14,7 +15,6 @@ module.exports = function(app, passport) {
     // =====================================
     // show the login form
     app.get('/login', function(req, res) {
-
         // render the page and pass in any flash data if it exists
         res.render('login.ejs', { message: req.flash('loginMessage') }); 
     });
@@ -57,6 +57,24 @@ module.exports = function(app, passport) {
         res.render('profile.ejs', {
             user : req.user // get the user out of session and pass to template
         });
+    });
+
+    app.get('/profile/edit', isLoggedIn, function(req, res){
+        res.render('profile/edit.ejs', {
+            user : req.user
+        });
+    });
+
+    app.post('/profile', isLoggedIn, function(req, res){
+        db.User.findById(req.user._id, function(err, user){
+            user.name = req.body.name;
+            user.email = req.body.email;
+            user.faveCuisines = req.body.faveCuisines;
+            user.save(function(err){
+                console.log(err)
+            });
+        });
+        res.redirect('/profile');
     });
 
     // =====================================
