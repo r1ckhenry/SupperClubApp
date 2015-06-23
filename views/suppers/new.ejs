@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World</title>
+<script src="/javascript/suppers.js"></script></head>
+<body>
+
+  <form action='/suppers' method='POST' id="supper-form" class="form-inline">
+    <input name="firstLine" type="text" class="form-control" id="new-supper" placeholder="First Line">
+    <input name="secondLine" type="text" class="form-control" id="new-supper" placeholder="Second Line">
+    <input name="city" type="text" class="form-control" id="new-supper" placeholder="City">
+    <input name="postCode" type="text" class="form-control" id="new-supper" placeholder="Postcode">
+    <input type="hidden" value="0" name="veggie" />
+    <input type="checkbox" value="1" name="veggie" />Veggie
+    <input type="hidden" value="0" name="vegan" />
+    <input type="checkbox" value="1" name="vegan" />Vegan
+    <input name="dishes" type="text" class="form-control" id="new-supper" placeholder="Dish">
+    <input name="cuisine" type="text" class="form-control" id="new-supper" placeholder="Cuisine">
+    <input name="drinks" type="text" class="form-control" id="new-supper" placeholder="Cuisine">
+    <input type="datetime-local" name="date" class="form-control" > 
+    <input name="dressCode" type="text" class="form-control" id="new-supper" placeholder="Dresscode">
+    <textarea name="reviews" id="" cols="30" rows="10" placeholder="Enter your review here"></textarea>
+    <textarea name="description" id="" cols="30" rows="10" placeholder="Enter your description here"></textarea>
+    <button type="submit" class="btn btn-default">Add Supper</button>
+  </form>
+
+</body>
+</html>
