@@ -5,11 +5,11 @@ var repl = REPL.start(' > ');
 
 repl.context.db = db;
 
-db.base.models.Supper.collection.remove();
-db.base.models.User.collection.remove();
-db.base.models.Address.collection.remove();
+db.Supper.collection.remove();
+db.User.collection.remove();
+db.Address.collection.remove();
 
-db.base.models.Supper.create({
+db.Supper.create({
   address: {
     firstLine: '21',
     secondLine: 'High Street',
@@ -18,15 +18,24 @@ db.base.models.Supper.create({
   },
   date: '24/07/2015'
 }, function(err, supper){
-  console.log(supper);
+  // console.log(supper);
+  db.User.create({
+    name: 'Tobia Cassandro',
+    password: 'hello',
+    email: 'tobia@tobia.com'
+  }, function(err, user){
+    supper.users.push(user);
+    supper.save();
+    console.log('seeded');
+  })
 });
 
-db.base.models.User.create({
+db.User.create({
   name: 'Anna Gaughan',
   password: 'anna',
   email: 'anna@anna.com'
 }, function(err, user){
-  console.log(user);
+  // console.log(user);
 });
 
 console.log('Seeded')
