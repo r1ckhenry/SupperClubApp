@@ -22,7 +22,7 @@ var db = require('./app/models/models');
 
 app.set('views', './views');
 
-// mongoose.connect(configDB.url); // connect to our database
+mongoose.connect(configDB.url); // connect to our database
 
 require('./config/passport')(passport); // pass passport for configuration
 

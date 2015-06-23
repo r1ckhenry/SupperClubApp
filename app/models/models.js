@@ -2,7 +2,7 @@
 // load the things we need
 var bcrypt   = require('bcrypt-nodejs');
 var mongoose =  require('mongoose');
-mongoose.connect("mongodb://localhost/supperdatabase");
+// mongoose.connect("mongodb://localhost/supperdatabase");
 
 var UserSchema = new mongoose.Schema({
   name: String,
@@ -27,7 +27,7 @@ var SupperSchema = new mongoose.Schema({
 // methods ======================
 // generating a hash
 UserSchema.methods.generateHash = function(password) {
-    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+  return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
 
 // checking if password is valid
@@ -35,6 +35,8 @@ UserSchema.methods.validPassword = function(password) {
     return bcrypt.compareSync(password, this.password);
 };
 
-module.exports = mongoose.model('User', UserSchema);
-module.exports = mongoose.model('Supper', SupperSchema);
-module.exports = mongoose.model('Address', AddressSchema);
+module.exports = {
+  User: mongoose.model('User', UserSchema),
+  Supper: mongoose.model('Supper', SupperSchema),
+  Address: mongoose.model('Address', AddressSchema)
+}
