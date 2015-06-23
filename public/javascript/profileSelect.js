@@ -1,4 +1,5 @@
-var EditProfile = EditProfile || {}
+var EditProfile = EditProfile || {};
+var CuisineSearch = CuisineSearch || {};
 
 $(function(){
 
@@ -9,7 +10,7 @@ $(function(){
     });
   });
 
-
+  $('#cuisineSearchInput').on('keyup', CuisineSearch.showSearch);
 
 });
 
@@ -31,3 +32,27 @@ EditProfile = {
     });
   }
 }
+
+
+// Search Show in in dropdown
+CuisineSearch = {
+  showSearch: function() {
+    $('#showCuisinesList').empty();
+    $.get('/assets/cuisines.json', function(response){
+      CuisineSearch.showOptions(response);
+    });
+  },
+  showOptions: function(response, val) {
+    var val = $('#cuisineSearchInput').val();
+    $.each($(response.food), function(i,e){
+        var countries = e.includes(val) === true ? CuisineSearch.appendList(e) : false;
+    })
+  },
+  appendList: function(country) {
+    $('#showCuisinesList').append('<li class="cuisine-type-js">'+country+'</li>');
+  }
+}
+
+
+
+
