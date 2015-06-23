@@ -4,39 +4,41 @@ var bcrypt   = require('bcrypt-nodejs');
 var mongoose =  require('mongoose');
 // mongoose.connect("mongodb://localhost/supperdatabase");
 
-var UserSchema = new mongoose.Schema({
-  name: String,
-  password: String,
-  email: String,
-  suppersCreated: Array,
-  suppersAttending: Array,
-  payments: Array,
-  faveCuisines: Array,
-  allReviews: Array
+var AddressSchema = new mongoose.Schema({
+  firstLine: {type:String, default:""},
+  secondLine: {type:String, default:""},
+  city: {type:String, default:""},
+  postCode: {type:String, default:""}
 });
 
-var AddressSchema = new mongoose.Schema({
-  firstLine: String,
-  secondLine: String,
-  city: String,
-  postCode: String
+var UserSchema = new mongoose.Schema({
+  name: {type:String, default:""},
+  password: {type:String, default:""},
+  email: {type:String, default:""},
+  address: [AddressSchema],
+  suppersCreated: {type:Array, default:[]},
+  suppersAttending: {type:Array, default:[]},
+  payments: {type:Array, default:[]},
+  faveCuisines: {type:Array, default:[]},
+  allReviews: {type:Array, default:[]}
 });
 
 var MenuSchema = new mongoose.Schema({
-  veggie: Boolean,
-  vegan: Boolean,
-  dishes: Array,
-  cuisine: Array,
-  drinks: Array
+  veggie: {type:Boolean, default: false},
+  vegan: {type:Boolean, default: false},
+  dishes: {type:Array, default:[]},
+  cuisine: {type:Array, default:[]},
+  drinks: {type:Array, default:[]}
 });
 
 var SupperSchema = new mongoose.Schema({
   address: [AddressSchema],
   menu: [MenuSchema],
-  date: Date,
-  description: String,
-  dressCode: String,
-  reviews: Array
+  date: {type:Date, default: Date.now},
+  guest: {type:Number, default: 0},
+  description: {type:String, default:""},
+  dressCode: {type:String, default:""},
+  reviews: {type:Array, default:[]}
 }); 
 
 // methods ======================
