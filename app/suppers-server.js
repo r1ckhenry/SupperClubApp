@@ -8,6 +8,10 @@ module.exports = function(app, db) {
     })
   })
 
+  app.get('/suppers/new', function(req, res){
+   res.render('suppers/new.ejs');
+  });
+
   app.get('/suppers/:id', function(req, res) {
     db.Supper.findById(req.params.id, function(err, supper){
       res.render('suppers/show.ejs', {
@@ -37,9 +41,7 @@ module.exports = function(app, db) {
     });
   })
 
-  app.get('/suppers/new', function(req, res){
-   res.render('suppers/new.ejs');
-  });
+  
 
   //DELETE METHOD
   app.post("/suppers/:id", function(req, res){

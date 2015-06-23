@@ -30,8 +30,21 @@ db.Supper.create({
   reviews: [8,9]
 
 }, function(err, supper){
+<<<<<<< HEAD
   console.log("********");
   console.log(supper);
+=======
+  // console.log(supper);
+  db.User.create({
+    name: 'Tobia Cassandro',
+    password: 'hello',
+    email: 'tobia@tobia.com'
+  }, function(err, user){
+    supper.users.push(user);
+    supper.save();
+    console.log('seeded');
+  })
+>>>>>>> 1ed8cf060985f3969c12057188ea2a01302cbc38
 });
 
 db.User.create({
@@ -45,8 +58,12 @@ db.User.create({
     postCode: 'EC6 4BQ'
   }
 }, function(err, user){
+<<<<<<< HEAD
   console.log("inside user create");
   console.log(user);
+=======
+  // console.log(user);
+>>>>>>> 1ed8cf060985f3969c12057188ea2a01302cbc38
 });
 
 
