@@ -10,7 +10,7 @@
   <p><%= supper.menu[0].drinks %></p>
   <p><%= supper.menu[0].cuisine %></p>
   <p><%= supper.menu[0].dishes %></p>
-  <img src = <%= supper[i].image %> />
+  <img src="<%= supper.image %>" />
 
   <form action="/suppers/<%=supper._id%>" method="POST"> 
     <input type="submit" value="attend">

@@ -41,7 +41,7 @@ var SupperSchema = new mongoose.Schema({
   guest: {type:Number, default: 0},
   title: {type:String, default:""},
   description: {type:String, default:""},
-  image: {type:String, default:"http://supperrestaurant.com/wp-content/uploads/2013/06/supper-feature.jpg"},
+  image: String,
   dressCode: {type:String, default:""},
   reviews: {type:Array, default:[]}
 }); 

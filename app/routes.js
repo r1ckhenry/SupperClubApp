@@ -90,7 +90,7 @@ module.exports = function(app, passport, db) {
     app.post('/suppers', function(req, res) {
     var user = req.user;
     var sup = req.body;
-    console.log(sup);
+    console.log(user);
     var veggie = req.body.menu;
     var veggieBool = req.body.veggie === 'on' ? 'true' : 'false';
     var veganBool = req.body.vegan === 'on' ? 'true' : 'false';
@@ -101,7 +101,8 @@ module.exports = function(app, passport, db) {
       dressCode: sup.dressCode,
       date: dateTime,
       guest: sup.guest,
-      
+      image: sup.image,
+      userid: req.user.id,
       address: {
         firstLine: sup.firstLine,
         secondLine: sup.secondLine,

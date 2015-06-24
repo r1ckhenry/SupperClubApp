@@ -5,6 +5,10 @@ $(document).ready(function(){
     getMenuResults();
 
   })
+
+  $('#searchresults').on("click", function(e){
+     bookSupper();
+  })
 });
 
   function getMenuResults(){
@@ -27,10 +31,10 @@ $(document).ready(function(){
       $('#searchresults').empty();
       $.get('/suppers/' + supperId, function(response){
         $.each($(response), function(index,element) {
-          console.log(element.user);
-          // $('#searchresults').append('<h4>'+element.guest+'</h4>');
+          $('#searchresults').append('<h4>'+element.guest+'</h4>');
           $('#searchresults').append('<h4>'+element.title+'</h4>');
           $('#searchresults').append('<img src="'+element.image+'"/>');
+          $('#searchresults').append('<a href="/suppers/'+supperId+'">ViewInfo</a>');
         })
       })
     }
