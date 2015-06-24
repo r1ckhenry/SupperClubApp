@@ -1,3 +1,5 @@
+
+
 // app/routes.js
 module.exports = function(app, passport, db) {
 
@@ -54,9 +56,33 @@ module.exports = function(app, passport, db) {
     // we will want this protected so you have to be logged in to visit
     // we will use route middleware to verify this (the isLoggedIn function)
     app.get('/profile', isLoggedIn, function(req, res) {
+
+        // console.log(req.user.suppersCreated)
+        // console.log(req.user.suppersAttending)
+
+        // // db.Supper.find({_id: {$in:req.user.suppersCreated}}, function(err, suppers){
+        // //     return suppers;
+        // // })
+        //  // console.log(suppersCreated, suppersAttending)
+
         res.render('profile.ejs', {
-            user : req.user // get the user out of session and pass to template
-        });
+            user: req.user
+         })
+
+        // var query = db.Supper.find();
+
+        // query.and([{_id: '558a6e6cadc14c0b0bd4d50e'}, {_id: '5589681782c4a68e39a0c014'}])
+
+        // // db.Supper.find({})
+        // // .where('_id')
+        // // .and([{$in:req.user.suppersCreated}, {$in:req.user.suppersAttending}])
+        // // .in(req.user.suppersCreated)
+        // // .and
+        // // .where('_id')
+        // // .in(req.user.suppersAttending)
+        // .exec(function(err, suppers) {
+        //     console.log(suppers);
+        // });
     });
 
 
