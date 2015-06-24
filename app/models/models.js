@@ -15,6 +15,8 @@ var UserSchema = new mongoose.Schema({
   name: {type:String, default:""},
   password: {type:String, default:""},
   email: {type:String, default:""},
+  bio: {type:String, default:""},
+  image: {type:String, default:"https://lh3.googleusercontent.com/-38hgaEA1tdY/AAAAAAAAAAI/AAAAAAAAAAA/FUjS-p5xJ4Q/photo.jpg"},
   address: [AddressSchema],
   suppersCreated: {type:Array, default:[]},
   suppersAttending: {type:Array, default:[]},
@@ -36,7 +38,9 @@ var SupperSchema = new mongoose.Schema({
   menu: [MenuSchema],
   date: {type:Date, default: Date.now},
   guest: {type:Number, default: 0},
+  title: {type:String, default:""},
   description: {type:String, default:""},
+  image: {type:String, default:"http://supperrestaurant.com/wp-content/uploads/2013/06/supper-feature.jpg"},
   dressCode: {type:String, default:""},
   reviews: {type:Array, default:[]}
 }); 

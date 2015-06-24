@@ -25,32 +25,24 @@ db.Supper.create({
     drinks: ["wine"]
   },
   guest: 12,
+  title: "blah blah blah",
   description: "Donut marzipan donut apple pie. Jelly-o topping sesame snaps oat cake cake caramels. Jelly-o marzipan jujubes bear claw jujubes fruitcake cupcake. Icing lemon drops macaroon bonbon tootsie roll. Marshmallow sesame snaps cupcake gummies cookie caramels sugar plum. Cookie cake chupa chups sugar plum cotton candy jelly-o lemon drops sesame snaps candy canes. Cotton candy tiramisu halvah. Croissant donut marzipan dragée powder. Apple pie toffee cheesecake tart. Jelly-o cotton candy chocolate candy bonbon marzipan chocolate cake. Bear claw marzipan gummi bears gingerbread lemon drops tart pie. Cake chocolate bar cake jelly-o. Sweet roll gingerbread sugar plum. Oat cake carrot cake jujubes caramels chocolate bar.",
   dressCode: "casual",
-  reviews: [8,9]
+  reviews: [8,9],
+  image:"http://www.suppercentral.ca/images/info-image_index.jpg"
 
 }, function(err, supper){
-<<<<<<< HEAD
-  console.log("********");
-  console.log(supper);
-=======
-  // console.log(supper);
-  db.User.create({
-    name: 'Tobia Cassandro',
-    password: 'hello',
-    email: 'tobia@tobia.com'
-  }, function(err, user){
-    supper.users.push(user);
-    supper.save();
-    console.log('seeded');
-  })
->>>>>>> 1ed8cf060985f3969c12057188ea2a01302cbc38
-});
+   console.log(supper);
+
+ });
+  
 
 db.User.create({
   name: 'Anna Gaughan',
   password: 'anna',
   email: 'anna@anna.com',
+  bio: 'lorem',
+  image:"https://m2.behance.net/rendition/pm/8680925/disp/7a312d3181a5a4b2334089e3cea1708a.jpg",
   address: {
     firstLine: '34',
     secondLine: 'Sloe Street',
@@ -58,12 +50,8 @@ db.User.create({
     postCode: 'EC6 4BQ'
   }
 }, function(err, user){
-<<<<<<< HEAD
-  console.log("inside user create");
   console.log(user);
-=======
-  // console.log(user);
->>>>>>> 1ed8cf060985f3969c12057188ea2a01302cbc38
+
 });
 
 
