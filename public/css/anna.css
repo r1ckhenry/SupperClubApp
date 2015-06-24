@@ -17,4 +17,12 @@
 }
 .supper-header{
   font-size: 20px;
+  text-decoration: underline;
+}
+
+#attend-button{
+  background-color: #f2784b;
+  border: 1px solid #e74c3c;
+  color: white;
+  text-decoration: none;
 }
