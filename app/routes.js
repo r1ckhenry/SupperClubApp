@@ -134,15 +134,20 @@ module.exports = function(app, passport, db) {
     });
 
     app.post('/profile', isLoggedIn, function(req, res){
-        db.User.findById(req.user._id, function(err, user){
+        if (req.xhr) {
+            req.user.faveCuisines.push(req.body.newCountry);
+            req.user.save(function(err){
+                console.log(req.user);
+            });
+        } else {
+            db.User.findById(req.user._id, function(err, user){
             user.name = req.body.name;
-            user.email = req.body.email;
-            user.faveCuisines = req.body.faveCuisines;
             user.save(function(err){
                 console.log(err)
             });
         });
         res.redirect('/profile');
+        }
     });
 
     // =====================================
