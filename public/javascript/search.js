@@ -1,11 +1,5 @@
 $(document).ready(function(){
-
-  // $('#search-form').on("submit", function(e){
-  //   e.preventDefault();
-  //   console.log('working');
-  //   getSearchResults();
-  // });
-
+// eventListener on input
   $("#search-form").on("keyup", function(e){
     e.preventDefault();
     getMenuResults();
@@ -13,9 +7,8 @@ $(document).ready(function(){
   })
 });
 
-
-
   function getMenuResults(){
+    // sending search to db
 
     $.post('/searchresults', { location: $('.form-input').val() },
       function(response){
@@ -29,30 +22,20 @@ $(document).ready(function(){
   )}
 
     function appendToPage(supperId){
+      // adding search to page
+
       $('#searchresults').empty();
       $.get('/suppers/' + supperId, function(response){
         $.each($(response), function(index,element) {
-          console.log(element.image);
+          console.log(element.user);
           // $('#searchresults').append('<h4>'+element.guest+'</h4>');
           $('#searchresults').append('<h4>'+element.title+'</h4>');
-          $('#searchresults').append('<img src="'+element.image+'"/>');
-
-          // $('#searchresults').append('<h4>'+element.menu[0].cuisine+'</h4>');
-          
-
+          // $('#searchresults').append('<img src="'+element.image+'"/>');
         })
       })
     }
 
 
-// function getSearchResults() {
- 
-//   $.post('/searchresults', { location: $('.form-input').val() }, function(response){
-//     console.log(response);
-//     $.each($(response), function(index, item){
-
-//       console.log(item.address[0].city);
-//     })
 
 
    
