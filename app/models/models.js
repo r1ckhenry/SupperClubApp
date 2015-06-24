@@ -36,11 +36,12 @@ var MenuSchema = new mongoose.Schema({
 var SupperSchema = new mongoose.Schema({
   address: [AddressSchema],
   menu: [MenuSchema],
+  userid: {type:String, default:""},
   date: {type:Date, default: Date.now},
   guest: {type:Number, default: 0},
   title: {type:String, default:""},
   description: {type:String, default:""},
-  image: {type:String, default:"http://supperrestaurant.com/wp-content/uploads/2013/06/supper-feature.jpg"},
+  image: String,
   dressCode: {type:String, default:""},
   reviews: {type:Array, default:[]}
 }); 
