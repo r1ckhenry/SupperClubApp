@@ -1,21 +1,27 @@
 <%- include ../templates/_head.ejs %>
 <body>
-
-  <h1><%= supper.description %></h1>
-  <p><%= supper.dressCode %></p>
-  <p><%= supper.menu[0].drinks %></p>
-  <p><%= supper.menu[0].cuisine %></p>
-  <p><%= supper.menu[0].dishes %></p>
-
-
-  <address><%=supper.address[0].postCode%></address>
-  
-  <div id="map-wrapper">
-    <div id="map" style="width:1430px; height:500px;"></div>
-  </div>
-
+ 
+<div class="box box-5">
   <img src="<%= supper.image %>" />
+ </div>
+  
 
+  <div class="box box-5" id="supper-wrapper">
+    <p><%= supper.description %></p>
+    <p><%= supper.dressCode %></p>
+    <p><%= supper.menu[0].drinks %></p>
+    <p><%= supper.menu[0].cuisine %></p>
+    <p><%= supper.menu[0].dishes %></p>
+  </div>  
+
+
+  <!-- <address><%=supper.address[0].postCode%></address> -->
+  
+  <div class="box box-5" id="map-wrapper">
+    <div class="box box-5" id="map" style="width:430px; height:500px;"></div>
+  </div>
+  
+  <address><%=supper.address[0].postCode%></address>
 
   <form action="/suppers/<%=supper._id%>" method="POST"> 
     <input type="submit" class="attending" value="attend">
