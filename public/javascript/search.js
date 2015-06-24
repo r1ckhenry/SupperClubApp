@@ -4,28 +4,59 @@
 
 $(document).ready(function(){
 
-  $('#search-form').on("submit", function(e){
+  // $('#search-form').on("submit", function(e){
+  //   e.preventDefault();
+  //   console.log('working');
+  //   getSearchResults();
+  // });
+
+  $("#search-form").on("keyup", function(e){
     e.preventDefault();
-    console.log('working');
-    getSearchResults();
-  });
+    // console.log(this)
+    getMenuResults();
+  })
 });
 
-// Supper = {
-// all: 
 
 
-function getSearchResults() {
+  function getMenuResults(){
+
+    $.post('/searchresults', { location: $('.form-input').val() },
+      function(response){
+       var val = $('.form-input').val()
+       
+
+        $.each($(response), function(index, item){
+         var location =  item.address[0].city
+          location.includes(val)  === true ? 
+          appendToPage(item._id): false;
+
+        })
+
+
+        // console.log(response);
+        // if(response === item)
+      }
+
+  )}
+
+    function appendToPage(){
+      $.get('/searchresults', function(index, item){
+        var result = item
+        console.log(this);
+
+      })
+    }
+
+
+// function getSearchResults() {
  
-  $.post('/searchresults', { location: $('.form-input').val() }, function(response){
-    $.each($(response), function(index, location){
-      $('.searchresults').append(
-        // '<h1>' + location.menu + '<h1>'
-        location.menu[0].dishes
+//   $.post('/searchresults', { location: $('.form-input').val() }, function(response){
+//     console.log(response);
+//     $.each($(response), function(index, item){
 
-        )
-      console.log(this);
-    })
+//       console.log(item.address[0].city);
+//     })
 
 
     // var location = JSON.parse(data);
@@ -39,9 +70,9 @@ function getSearchResults() {
 
   // }).done(function(response){
   //   console.log(response);
-  })
+//   })
 
-}
+// }
 
 
 
