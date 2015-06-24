@@ -73,6 +73,7 @@ module.exports = function(app, passport, db) {
             res.render('suppers/show.ejs', {
         supper: supper
         });
+            
     })
   });
     
