@@ -1,0 +1,20 @@
+
+#supper-image{
+  width: 100%;
+  text-align: center;
+}
+
+
+#supper-wrapper{
+  /*padding:1%;*/
+  color: white;
+  margin:10%;
+}
+
+#supper-information{
+  color: white;  
+  margin:5%;
+}
+.supper-header{
+  font-size: 20px;
+}

@@ -1,27 +1,39 @@
 <%- include ../templates/_head.ejs %>
 <body>
  
-<div class="box box-5">
+<div class="box box-4" id="supper-image">
   <img src="<%= supper.image %>" />
  </div>
   
 
-  <div class="box box-5" id="supper-wrapper">
-    <p><%= supper.description %></p>
-    <p><%= supper.dressCode %></p>
-    <p><%= supper.menu[0].drinks %></p>
-    <p><%= supper.menu[0].cuisine %></p>
-    <p><%= supper.menu[0].dishes %></p>
-  </div>  
+  <div  id="supper-wrapper">
+    <div class="box box-3" id="supper-description"
+      <h3>Description</h3>
+      <P> <%= supper.description %></p>
+    </div>
+       
+     <div class="box box-3" id="supper-information">
+       <p class="supper-header">Dress Code
+        <%= supper.dressCode %></p>  
+        <p class="supper-header">Drinks
+         <%= supper.menu[0].drinks %></p>
+        <p class="supper-header">Cuisine</p>
+        <p> <%= supper.menu[0].cuisine %></p>
+        <p class="supper-header">Dishes</p>
+        <p> <%= supper.menu[0].dishes %></p>
+    </div>  
+      
 
 
-  <!-- <address><%=supper.address[0].postCode%></address> -->
   
-  <div class="box box-5" id="map-wrapper">
-    <div class="box box-5" id="map" style="width:430px; height:500px;"></div>
+    
+    <div class="box box-3" id="map-wrapper">
+      <div class="box box-3" id="map" style="width:400px; height:500px;">
+      </div>
+    </div>
+
+    <address><%=supper.address[0].postCode%></address>
   </div>
-  
-  <address><%=supper.address[0].postCode%></address>
 
   <form action="/suppers/<%=supper._id%>" method="POST"> 
     <input type="submit" class="attending" value="attend">
