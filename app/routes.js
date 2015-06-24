@@ -86,9 +86,18 @@ module.exports = function(app, passport, db) {
     app.post('/suppers', function(req, res) {
     var user = req.user;
     var sup = req.body;
+    console.log(sup);
+    var veggie = req.body.menu;
+    var veggieBool = req.body.veggie === 'on' ? 'true' : 'false';
+    var veganBool = req.body.vegan === 'on' ? 'true' : 'false';
+    var dateTime = new Date(req.body.date);
+
     db.Supper.create({
       description : sup.description,
       dressCode: sup.dressCode,
+      date: dateTime,
+      guest: sup.guest,
+      
       address: {
         firstLine: sup.firstLine,
         secondLine: sup.secondLine,
@@ -98,13 +107,14 @@ module.exports = function(app, passport, db) {
       menu: {
         dishes: sup.dishes,
         cuisine: sup.cuisine,
-        drinks: sup.drinks
+        drinks: sup.drinks,
+        veggie: veggieBool,
+        vegan: veganBool
       }
     }, function(err, supper){
         req.user.suppersCreated.push(supper._id);
         console.log(supper);
         req.user.save(function(err){
-            console.log(err);
         });
         res.redirect('/suppers');
     });

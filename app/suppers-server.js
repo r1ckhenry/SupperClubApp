@@ -8,12 +8,6 @@ module.exports = function(app, db) {
     })
   })
 
-
-
-
-
-  
-
   //DELETE METHOD
   app.post("/suppers/:id", function(req, res){
     var supperId = req.params.id;

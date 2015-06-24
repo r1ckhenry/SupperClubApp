@@ -12,6 +12,8 @@
    <p>Drinks: <%= supper[i].menu[0].drinks %> </p>
     <p>Cuisine: <%= supper[i].menu[0].cuisine %> </p>
     <p>Dishes: <%= supper[i].menu[0].dishes %> </p>
+    <p>Veggie: <%= supper[i].menu[0].veggie %> </p>
+    <p>Vegan: <%= supper[i].menu[0].vegan %> </p>
 
     <form action="/suppers/<%= supper[i]._id %>" method="POST">
       <input type="submit" value="delete">
