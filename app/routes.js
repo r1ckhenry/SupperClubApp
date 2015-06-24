@@ -68,12 +68,15 @@ module.exports = function(app, passport, db) {
         res.render('suppers/new.ejs');
     });
 
-    app.get('/suppers/:id', isLoggedIn, function(req, res) {
+    app.get('/suppers/:id', function(req, res) {
         db.Supper.findById(req.params.id, function(err, supper){
+        if (req.xhr) {
+            res.send(supper)
+        } else {
             res.render('suppers/show.ejs', {
-        supper: supper
-        });
-            
+                supper: supper
+            });  
+        }
     })
   });
     
