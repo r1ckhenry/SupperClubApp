@@ -36,6 +36,7 @@ var MenuSchema = new mongoose.Schema({
 var SupperSchema = new mongoose.Schema({
   address: [AddressSchema],
   menu: [MenuSchema],
+  userid: {type:String, default:""},
   date: {type:Date, default: Date.now},
   guest: {type:Number, default: 0},
   title: {type:String, default:""},

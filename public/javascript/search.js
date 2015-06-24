@@ -30,7 +30,7 @@ $(document).ready(function(){
           console.log(element.user);
           // $('#searchresults').append('<h4>'+element.guest+'</h4>');
           $('#searchresults').append('<h4>'+element.title+'</h4>');
-          // $('#searchresults').append('<img src="'+element.image+'"/>');
+          $('#searchresults').append('<img src="'+element.image+'"/>');
         })
       })
     }

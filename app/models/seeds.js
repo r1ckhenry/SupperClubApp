@@ -17,6 +17,7 @@ db.Supper.create({
     city: 'Galway',
     postCode: 'EH6 4BQ'
   },
+  userid : "",
   menu: {
     veggie: true,
     vegan: false,
