@@ -1,7 +1,3 @@
-// console.log('apple')
-// var Supper = Supper|| {} 
- var supper = [];
-
 $(document).ready(function(){
 
   // $('#search-form').on("submit", function(e){
@@ -12,8 +8,8 @@ $(document).ready(function(){
 
   $("#search-form").on("keyup", function(e){
     e.preventDefault();
-    
     getMenuResults();
+
   })
 });
 
@@ -33,11 +29,14 @@ $(document).ready(function(){
   )}
 
     function appendToPage(supperId){
+      $('#searchresults').empty();
       $.get('/suppers/' + supperId, function(response){
-        $('#searchresults').empty();
         $.each($(response), function(index,element) {
+          console.log(element.description);
           // $('#searchresults').append('<h4>'+element.guest+'</h4>');
           $('#searchresults').append('<h4>'+element.description+'</h4>');
+
+          // $('#searchresults').append('<h4>'+element.menu[0].cuisine+'</h4>');
           
 
         })
