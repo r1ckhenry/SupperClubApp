@@ -10,11 +10,7 @@
   
   <form action="/profile" method="POST">
     <label>Name:</label>
-    <input id="editName" name="name" type="text" placeholder="<%= user.name %>">
-    <label>email:</label>
-    <input id="editEmail" name="email" type="text" placeholder="<%= user.email %>">
-    <label>favourite cuisines:</label>
-    <select name="cuisine" id="showCuisines"></select>
+    <input id="editName" name="name" type="text" value="<%= user.name %>">
     <input type="submit">
   </form>
 
@@ -25,7 +21,9 @@
   </ul>
 
   <ul id="faveCuisineBoard">
-    
+    <%  user.faveCuisines.forEach(function(e,i){ %>
+      <li><%= e %></li>
+    <% }); %>
   </ul>
 
 

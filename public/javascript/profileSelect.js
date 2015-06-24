@@ -1,5 +1,6 @@
 var EditProfile = EditProfile || {};
 var CuisineSearch = CuisineSearch || {};
+var userBoard = userBoard || {};
 
 $(function(){
 
@@ -11,6 +12,7 @@ $(function(){
   });
 
   $('#cuisineSearchInput').on('keyup', CuisineSearch.showSearch);
+  $('#showCuisinesList').on('click', '.cuisine-type-js', userBoard.appendToBoard)
 
 });
 
@@ -33,7 +35,6 @@ EditProfile = {
   }
 }
 
-
 // Search Show in in dropdown
 CuisineSearch = {
   showSearch: function() {
@@ -50,6 +51,21 @@ CuisineSearch = {
   },
   appendList: function(country) {
     $('#showCuisinesList').append('<li class="cuisine-type-js">'+country+'</li>');
+  }
+}
+
+userBoard = {
+  appendToBoard: function() {
+    var $thisCountry = $(this).text();
+    $('#faveCuisineBoard').append('<li>'+$thisCountry+'</li>');
+    // console.log($this.text());
+    userBoard.sendToDb($thisCountry)
+  },
+  sendToDb: function(country) {
+    $.post('/profile', { newCountry : country})
+      .done(function(response){
+        console.log(response);
+      })
   }
 }
 
