@@ -32,9 +32,10 @@ $(document).ready(function(){
       $('#searchresults').empty();
       $.get('/suppers/' + supperId, function(response){
         $.each($(response), function(index,element) {
-          console.log(element.description);
+          console.log(element.image);
           // $('#searchresults').append('<h4>'+element.guest+'</h4>');
-          $('#searchresults').append('<h4>'+element.description+'</h4>');
+          $('#searchresults').append('<h4>'+element.title+'</h4>');
+          $('#searchresults').append('<img src="'+element.image+'"/>');
 
           // $('#searchresults').append('<h4>'+element.menu[0].cuisine+'</h4>');
           
