@@ -3,13 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>Show page</title>
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+  <script src="/javascript/map.js"></script>
 </head>
 <body>
+
   <h1><%= supper.description %></h1>
   <p><%= supper.dressCode %></p>
   <p><%= supper.menu[0].drinks %></p>
   <p><%= supper.menu[0].cuisine %></p>
   <p><%= supper.menu[0].dishes %></p>
+
+  <address><%=supper.address[0].postCode%></address>
+
+  <div id="map" style="width:1430px; height:500px;"></div>
   <form action="/suppers/<%=supper._id%>" method="POST"> 
     <input type="submit" value="attend">
   </form>
