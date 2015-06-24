@@ -53,7 +53,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/searchresults', function(req, res){
-  console.log(res.body);
+  console.log(req.params);
   res.send('Hello');
 }); 
 
@@ -62,7 +62,7 @@ app.post('/searchresults', function(req,res){
    // 'address.city': req.body.location
  }, function(err, city){
    res.send(city);
-   console.log(city);
+   // console.log(city);
  });
 
 });
