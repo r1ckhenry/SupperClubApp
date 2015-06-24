@@ -108,15 +108,14 @@ module.exports = function(app, passport, db) {
     
     app.post('/suppers/:id', isLoggedIn, function(req, res){
         req.user.suppersAttending.push(req.params.id);
-        req.user.save(function(err){
-            console.log(err);
+        req.user.save(function(err, supper){
+            console.log(err, supper);
         });
     })
 
     app.post('/suppers', function(req, res) {
     var user = req.user;
     var sup = req.body;
-    console.log(user);
     var veggie = req.body.menu;
     var veggieBool = req.body.veggie === 'on' ? 'true' : 'false';
     var veganBool = req.body.vegan === 'on' ? 'true' : 'false';
@@ -129,6 +128,7 @@ module.exports = function(app, passport, db) {
       guest: sup.guest,
       image: sup.image,
       userid: req.user.id,
+      title: sup.title,
       address: {
         firstLine: sup.firstLine,
         secondLine: sup.secondLine,

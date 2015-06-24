@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Show page</title>
-  <script src="http://maps.googleapis.com/maps/api/js"></script>
-  <script src="/javascript/map.js"></script>
-</head>
+<%- include ../templates/_head.ejs %>
 <body>
 
   <h1><%= supper.description %></h1>
@@ -16,8 +9,10 @@
 
 
   <address><%=supper.address[0].postCode%></address>
-
-  <div id="map" style="width:1430px; height:500px;"></div>
+  
+  <div id="map-wrapper">
+    <div id="map" style="width:1430px; height:500px;"></div>
+  </div>
 
   <img src="<%= supper.image %>" />
 
@@ -25,6 +20,8 @@
   <form action="/suppers/<%=supper._id%>" method="POST"> 
     <input type="submit" class="attending" value="attend">
   </form>
-  <!-- <button id="attend-supper">Attend This Supper</button> -->
+
+  <div id="notify"></div>
+
 </body>
 </html>

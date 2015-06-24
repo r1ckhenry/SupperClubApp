@@ -1,0 +1,221 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:500,800,700,100,900,400,300);
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,200italic,300italic,400italic,600,600italic,700);
+/***GLOBAL****/
+
+.container {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+
+body {
+  background: url('http://www.lovethispic.com/uploaded_images/38589-Outdoor-Dinner-Party.jpg') no-repeat center center fixed; 
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+input {
+  border: 0px;
+  border-radius: 2px;
+  padding-left: 5px;
+  height: 30px;
+  width: 25%;
+  background-color: rgba(255,255,255,0.9);
+  outline: none;
+}
+
+/********GRIDS*********/
+
+.box {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: -4px;
+}
+
+.box-1 {
+  width: 10%;
+}
+
+.box-2 {
+  width: 20%;
+}
+
+.box-3 {
+  width: 30%;
+}
+
+.box-4 {
+  width: 40%;
+}
+
+.box-5 {
+  width: 50%;
+}
+
+.box-6 {
+  width: 60%;
+}
+
+.box-7 {
+  width: 70%;
+}
+
+.box-8 {
+  width: 80%;
+}
+
+.box-9 {
+  width: 90%;
+}
+
+.box-10 {
+  width: 100%;
+}
+
+
+/****NAV*****/
+
+.global-nav {
+  height: 90px;
+  background-color: transparent;
+  margin-bottom: 30px;
+}
+
+.global-menu {
+  display: inline-block;
+  float: right;
+}
+
+.global-menu ul {
+  list-style: none;
+  padding-left: 0px;
+  padding: 30px 0;
+}
+
+.global-menu ul li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.global-menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: 100;
+  font-family: 'Titillium Web', sans-serif;
+  letter-spacing: 1.2px;
+}
+
+.brand {
+  display: inline-block;
+  float: left;
+  padding: 35px 10px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  font-size: 28px; 
+  color: white;
+}
+
+img {
+  max-width: 100%;
+}
+
+.brand span {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+}
+
+/*****BUTTONS*****/
+
+.btn {
+  padding: 4px 10px;
+  border-radius: 8px 0px 8px 0;
+  border: 1px solid transparent;
+}
+
+.btn-prim {
+  background-color: #f2784b;
+  border: 1px solid #e74c3c;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-sec {
+  background-color: rgba(255,255,255,0.3);
+  transition: background-color 0.3s;
+}
+
+.btn-sec:hover {
+  background-color: rgba(255,255,255,0.6);
+
+}
+
+
+/*******HOMEPAGE******/
+
+.hero {
+  text-align: center;
+  color: white;
+  padding: 50px 0;
+}
+
+.hero a {
+  color: white;
+  text-decoration: none;
+}
+
+.big-hero {
+  color: white;
+  font-size: 70px;
+  font-weight: 600;
+}
+
+.small-hero {
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.search-bar {
+  background-color: rgba(0,0,0,0.5);
+  padding: 30px 0;
+}
+
+.search-bar input {
+  display: block;
+  margin: 0 auto;
+}
+
+#searchresults {
+  background-color: #e5e5e5;
+  padding: 30px 0;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space:nowrap
+}
+
+.search-card {
+  background-color: white;
+  border-radius: 3px;
+  margin: 10px;
+}
+
+.search-img {
+  border-radius: 3px 3px 0 0;
+}
+
+.card-info {
+  padding: 20px;
+}
+
+.card-info h4 {
+  text-align: center;
+}
+
+.card-info a {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}

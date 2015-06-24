@@ -31,10 +31,18 @@ $(document).ready(function(){
       $('#searchresults').empty();
       $.get('/suppers/' + supperId, function(response){
         $.each($(response), function(index,element) {
-          $('#searchresults').append('<h4>'+element.guest+'</h4>');
-          $('#searchresults').append('<h4>'+element.title+'</h4>');
-          $('#searchresults').append('<img src="'+element.image+'"/>');
-          $('#searchresults').append('<a href="/suppers/'+supperId+'">ViewInfo</a>');
+          console.log(element)
+          var searchCard = '<div class="box box-2 search-card"><img class="search-img" src="'+element.image+'"/>';
+              searchCard += '<div class="card-info"><h4>'+element.title+'</h4>';
+              searchCard += '<p>'+element.guest+'"</p>';
+              searchCard += '<a class="btn btn-prim" href="/suppers/'+supperId+'">ViewInfo</a></div></div>';
+
+
+
+          $('#searchresults').append(searchCard);
+          // $('#searchresults').append('<h4>'+element.title+'</h4>');
+          // $('#searchresults').append('<img src="'+element.image+'"/>');
+          // $('#searchresults').append('<a href="/suppers/'+supperId+'">ViewInfo</a></div>');
         })
       })
     }

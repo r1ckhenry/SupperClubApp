@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Hello World</title>
-<script src="javascript/suppers.js"></script></head>
+<%- include templates/_head.ejs %>
 <body>
   <% for (var i = 0; i < supper.length; i++) { %>
     <a href="/suppers/<%= supper[i].id %>"<p><%= supper[i].description %> </p></a>

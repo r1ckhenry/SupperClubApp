@@ -1,25 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>SupperClub App</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="javascript/search.js"></script>
-</head>
+<%- include templates/_head.ejs %>
+
+
+
 <body>
-  <h1>SupperClub App!</h1>
-    <a href="/suppers">All suppers</a>
-    <div class="page-wrapper">
-      <form action="/searchresults" method="POST" id="search-form">
-       <input name="location" class="form-input" placeholder="Location">
-        <input name="cuisine" class="form-input" placeholder="Cuisine">
-       <input type="submit" class="form-submit" value="search">
-      </form>
-      <div id="searchresults">
+
+<%- include templates/_header.ejs %>
+
+
+  <div class="hero">
+    <div class="big-hero">SUPPER CLUB</div>
+    <div class="small-hero">Lorem ipsum dolor sit amet, consectetur adipisicing elit</div>
+    <a href="/how" class="btn btn-sec">How it works</a>
+  </div>
+
+  <section class="search-bar">
+    <form action="/searchresults" method="POST" id="search-form">
+      <input name="location" class="form-input" placeholder="Location">
+    </form>
+  </section>
+
+  <div id="searchresults">
           
-      </div>
-     
-   </div>
+  </div>
 
 </body>
 </html>
