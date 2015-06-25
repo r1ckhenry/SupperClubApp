@@ -1,35 +1,42 @@
 <%- include ../templates/_head.ejs %>
 <body>
  
-<div class="box box-5" id="supper-image">
-  <img src="<%= supper.image %>" />
- </div>
+ <%- include ../templates/_header.ejs %>
 
- 
-  <div  id="supper-wrapper">
-    <div class="box box-3" id="supper-description">
-      <h3>Description</h3>
-      <P> <%= supper.description %></p>
-    </div>
-    
+<div class="box box-10"> 
+  <div id="supper-image">
+    <img src="<%= supper.image %>" />
+  </div>
+</div>
+
        
-     <div class="box box-3" id="supper-information">
-       <p class="supper-header">Dress Code</p>
-        <p><%= supper.dressCode %></p>  
-        <p class="supper-header">Drinks</p>
-         <%= supper.menu[0].drinks %></p>
-        <p class="supper-header">Cuisine</p>
+<div class="box box-10"> 
+  <div id="supper-information">
+    <div class="container">
+      <div class="box box-7">
+        <p class="supper-title"><%= supper.title %></p>
+        <small>Drinks</small>
+        <%= supper.menu[0].drinks %></p>
+        <i class="fa fa-users"></i>
+        <p class="supper-header"></p>
         <p> <%= supper.menu[0].cuisine %></p>
         <p class="supper-header">Dishes</p>
         <p> <%= supper.menu[0].dishes %></p>
-    </div>  
-      
+     </div>
+    </div>
+  </div>
+</div> 
 
-
+ 
+  <div  id="supper-wrapper">
+    <div class="box box-7" id="supper-description">
+      <h3>Description</h3>
+      <P> <%= supper.description %></p>
+    </div> 
   
     
-    <div class="box box-3" id="map-wrapper">
-      <div class="box box-3" id="map" style="width:400px; height:500px;">
+    <div class="box box-7" id="map-wrapper">
+      <div class="box box-7" id="map" style="width:400px; height:500px;">
       </div>
     </div>
 

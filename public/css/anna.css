@@ -1,5 +1,7 @@
 
-
+small {
+  font-size: 12px;
+}
 
 
 #supper-image{
@@ -15,12 +17,17 @@
 }
 
 #supper-information{
-  color: white;  
-  margin:5%;
+  background-color: white;
+  border-top: 1px solid #e5e5e5;  
 }
 .supper-header{
   font-size: 20px;
   text-decoration: underline;
+}
+
+#supper-image{
+  height: 400px;
+  overflow: hidden;
 }
 
 #notify{
@@ -43,6 +50,10 @@
 #attend-button input {
   width: 100%;
   float: right;
+}
+
+#supper-image img {
+  width: 100%;
 }
 
 
