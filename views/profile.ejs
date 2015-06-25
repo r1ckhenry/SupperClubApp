@@ -15,17 +15,39 @@
               <% if (String(result[i].userid) === String(user.id)) { %>
                 <div class="supper-card">
                     <img src="<%= result[i].image%>">
-                    <p class='lead'><%= result[i].title %></p>
-                    <p><%= result[i].dressCode %></p>
-                    <p><%= result[i].date %></p>
-                    <p><%= result[i].address[0].firstLine %></p>
-                    <p><%= result[i].address[0].secondLine %></p>
-                    <p><%= result[i].address[0].city %></p>
-                    <p><%= result[i].address[0].postCode %></p>
-                    <p><%= result[i].menu[0].veggie %></p>
-                    <p><%= result[i].menu[0].vegan %></p>
-                    <p><%= result[i].menu[0].dishes %></p>
-                    <p><%= result[i].menu[0].drinks %></p>
+                    <div class="supper-card-content">
+                        <p class='lead'><%= result[i].title %></p>
+                        <p class='small'><%= result[i].date %></p>
+
+                        <p class="small-alert-header">Location:</p>
+                        
+                        <p class='small'><%= result[i].address[0].firstLine %></p>
+                        <hr>
+                        <p class='small'><%= result[i].address[0].secondLine %></p>
+                        <hr>
+                        <p class='small'><%= result[i].address[0].city %></p>
+                        <hr>
+                        <p class='small'><%= result[i].address[0].postCode %></p>
+                        <hr>
+                        <div class="box box-5">
+                            <% if (result[i].menu[0].veggie === true) { %>
+                                <i class="text-center fa fa-check"></i>
+                            <% } else { %>
+                                <i class="text-center fa fa-times"></i>
+                            <% } %>
+                            <p class="medium text-center">Veggie</p>
+                        </div>
+                        <div class="box box-5">
+                            <% if (result[i].menu[0].vegan === true) { %>
+                                <i class="text-center fa fa-check"></i>
+                            <% } else { %>
+                                <i class="text-center fa fa-times"></i>
+                            <% } %>
+                            <p class="medium text-center">Vegan</p>
+                        </div>
+                        
+                        
+                    </div>
                 </div>
               <% } %>
             <% } %>      
@@ -52,18 +74,6 @@
               <% } %>
             <% } %> 
         </div>
-
-        <br>
-        <p><% result %></p> 
-
-        <p>suppers attending:<% user.suppersAttending %></p>
-        <% for(var i = 0; i < user.suppersAttending.length; i++) { %>
-          <% user.suppersAttending[i].userid === user.id %>
-        <% } %>
-        <p>suppers created: <% user.suppersCreated %></p>
-        <% for(var i = 0; i < user.suppersCreated.length; i++) { %>
-          <% user.suppersCreated[i].userid === user.id %>
-        <% } %>
 
     <section class="white-section">
         <div class="container">
@@ -95,19 +105,6 @@
                     <li>
                         <div class="box box-5">faveCuisines</div>
                         <div class="box box-5"><%= user.faveCuisines %></div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="show-profile">
-                <ul>        
-                    <li>
-                        <div class="box box-5">Suppers attending</div>
-                        <div class="box box-5"><%= user.suppersAttending %></div>                
-                    </li>
-                    <li>
-                        <div class="box box-5">Suppers created</div>
-                        <div class="box box-5"><%= user.suppersCreated %></div>
                     </li>
                 </ul>
             </div>

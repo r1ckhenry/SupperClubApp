@@ -23,7 +23,7 @@ body {
  -moz-background-size: cover;
  -o-background-size: cover;
  background-size: cover;
-  font-family: 'Titillium Web', sans-serif;
+ font-family: 'Raleway', sans-serif;
 }
 
 input {
@@ -45,6 +45,31 @@ hr {
 
 .pull-right {
   float: right;
+}
+
+.lead {
+  font-size: 18px;
+  font-weight: 100;
+  color: #c1c1c1; 
+}
+
+.small {
+  font-size: 12px;
+}
+
+.medium {
+  font-size: 14px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.small-alert-header {
+  color: #ff5a5f;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 15px 0;
 }
 
 /********GRIDS*********/
@@ -248,11 +273,6 @@ img {
 
 /***PROFILE SECTION *****/
 
-.white-section {
-  background-color: #e5e5e5;
-  padding: 30px 0;
-}
-
 .show-profile {
   background-color: white;
   border-radius: 4px;
@@ -287,4 +307,37 @@ img {
   color: white;
   border: 0;
   border-radius: 3px;
+}
+
+.host-suppers {
+  background-color: #e5e5e5;
+  width: 100%;
+}
+
+.supper-card {
+  width: 20%;
+  display: inline-block;
+  margin-right: -4px;
+  vertical-align: top;
+  margin: 0px 10px;
+  background-color: white;  
+  border-radius: 6px;
+
+}
+
+.supper-card p {
+  margin: 0px 0px;
+}
+
+.supper-card img {
+  border-radius: 6px 6px 0 0;
+}
+
+.supper-card-content {
+  padding: 20px 10px;
+}
+
+.supper-card-content .fa{
+  display: block;
+  margin-top: 10px;
 }
