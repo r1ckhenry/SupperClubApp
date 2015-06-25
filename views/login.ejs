@@ -7,11 +7,6 @@
 
 <div class="container">
 
- <div class="hero-login">
-  </div>
-
-<div class="col-sm-6 col-sm-offset-3">
-
    <div class="box box-2 login-box">
     <h1><span class="fa fa-sign-in"></span> Login</h1>
 
@@ -24,25 +19,34 @@
 
     <form action="/login" method="post">
         <div class="form-group">
-            <label>Email</label>
-            <input type="text" class="form-control" name="email">
+            <div class="box box-4">
+                <label>Email</label>
+            </div>
+            <div class="box box-6">
+                <input type="text" class="form-control" name="email">
+            </div>
+           
         </div>
         <div class="form-group">
-            <label>Password</label>
-            <input type="password" class="form-control" name="password">
+            <div class="box box-4">
+                <label>Password</label>
+            </div>
+            <div class="box box-6">
+                <input type="password" class="form-control" name="password">
+            </div>
         </div>
 
-        <button type="submit" class="btn btn-warning btn-lg">Login</button>
+        <button type="submit" class="btn btn-warning btn-lg login">Login</button>
     </form>
 
     <hr>
 
+    <div class="signup-bottom">
     <p>Need an account? <a href="/signup">Signup</a></p>
     <p>Or go <a href="/">home</a>.</p>
-
-
-
 </div>
+
+
 </div>
 </div>
 </body>
