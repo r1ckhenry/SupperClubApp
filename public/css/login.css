@@ -1,0 +1,28 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:500,800,700,100,900,400,300);
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,200italic,300italic,400italic,600,600italic,700);
+
+body{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+
+}
+
+.hero-login{
+  padding:1px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.box h1{
+  font-weight: 200;
+  font-size: 24px; 
+  color: white;
+}
+
+.login-box {
+  display: block;
+  margin: 0 auto;
+  text-align:center;
+   background-color:rgba(55,55,55,0.9);
+   padding:2px;
+}
