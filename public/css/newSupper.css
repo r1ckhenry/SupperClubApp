@@ -1,0 +1,29 @@
+.new-supper-form {
+
+}
+
+.new-supper-form input {
+  width: 100%;
+  border: 0px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.new-supper-form textarea {
+  width: 100%;
+  border: 0px;
+  border-radius: 3px;
+  margin-bottom:  5px;
+  height: 70px;
+}
+
+.left-supper, .right-supper {
+  padding: 15px;
+}
+
+.supper-new-h1 {
+  font-weight: 200;
+  font-family: 'Raleway';
+  text-align: center;
+  padding:5px;
+}

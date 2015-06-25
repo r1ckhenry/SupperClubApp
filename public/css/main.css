@@ -8,6 +8,10 @@
   margin: 0 auto;
 }
 
+.white-section {
+  background-color: #e5e5e5;
+}
+
 body {
   background: url('http://www.lovethispic.com/uploaded_images/38589-Outdoor-Dinner-Party.jpg') no-repeat center center fixed; 
  -webkit-background-size: cover;
@@ -26,6 +30,12 @@ input {
   background-color: rgba(255,255,255,0.9);
   outline: none;
 }
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);}
 
 /********GRIDS*********/
 
