@@ -22,12 +22,21 @@
             <small><%= supper.guest %> guests</small>
           </li>
           <li class="box box-3">
-            <div><i class="fa fa-check"></i></div>
-            <small><%= supper.menu[0].veggie%> veggie </small>
-          </li>
+          
+            <% if (supper.menu[0].veggie === true) { %>
+            <i class="text-center fa fa-check"></i>
+            <% } else { %>
+            <i class="text-center fa fa-times"></i>
+           <% } %>
+            <p class="medium text-center">Veggie</p>
+            </li>
           <li class="box box-3">
-            <div><i class="fa fa-times"></i></div>
-            <small><%= supper.menu[0].vegan%> vegan </small>
+            < <% if (supper.menu[0].vegan === true) { %>
+                                <i class="text-center fa fa-check"></i>
+                            <% } else { %>
+                                <i class="text-center fa fa-times"></i>
+                            <% } %>
+                            <p class="medium text-center">Vegan</p>
             </li>
         </ul>
      </div>
