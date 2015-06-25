@@ -334,6 +334,7 @@ img {
   width: 100%;
   overflow-x: scroll;
   overflow-y: hidden; 
+  white-space: nowrap;
 }
 
 .supper-card {
@@ -344,7 +345,7 @@ img {
   margin: 0px 10px;
   background-color: white;  
   border-radius: 6px;
-
+  white-space: initial;
 }
 
 .supper-card p {

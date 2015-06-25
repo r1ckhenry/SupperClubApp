@@ -45,7 +45,9 @@
                             <p class="medium text-center">Vegan</p>
                         </div>
                         
-                        
+                        <form action="/suppers/<%= result[i]._id %>/delete" method="POST">
+                            <input type="submit" value="cancel supper">
+                        </form>
                     </div>
                 </div>
               <% } %>
@@ -54,6 +56,7 @@
 
         <h2 class="text-center">Suppers you are attending</h2>
         <div class="attend-suppers">  
+
             <% for(var i = 0; i < result.length; i++) { %>
               <% if (String(result[i].userid) !== String(user.id)) { %>
                 <div class="supper-card">
