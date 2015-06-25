@@ -46,9 +46,7 @@ small {
 
 #notify{
   text-align: center;
-  font-size: 30px;
-  color: white;
-  background-color: gray;
+  font-size: 20px;
   margin: 3px;
 }
 
@@ -78,7 +76,22 @@ small {
 }
 
 .booking-content {
-  border: 2px solid gray;
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+  padding: 10px;
+  height: 115px;
+}
+
+.booking-button {
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: white;
+  padding: 10px;
+}
+
+.booking-form {
+  position: absolute;
 }
 
 

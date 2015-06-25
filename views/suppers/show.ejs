@@ -36,18 +36,17 @@
        <div class="booking-form">
          <div class="booking-header">
             Attend this supper
-           <div class="booking-content">
-             To attend this dinner please book below. 
-             <div class="booking-button">
-             <section id="attend-button">
-                <form action="/suppers/<%=supper._id%>" method="POST"> 
-                  <input type="submit" class="attending" value="attend">
-                </form>
-              </section>
-               
-             </div>
-           </div>
-         </div>
+          </div>
+          <div id="notify"></div>
+          <div class="booking-content">
+             To attend this dinner please book below.
+          </div>   
+          <div class="booking-button">
+            <form action="/suppers/<%=supper._id%>" method="POST"> 
+              <input type="submit" class="attending btn btn-prim" value="attend">
+            </form>               
+          </div>
+           
        </div>
      </div>
     </div>
@@ -72,14 +71,6 @@
   
 
   <div id="notify"></div>
-
-
-  <section id="attend-button">
-    <form action="/suppers/<%=supper._id%>" method="POST"> 
-      <input type="submit" class="attending" value="attend">
-    </form>
-  </section>
-
  
 
 </body>
