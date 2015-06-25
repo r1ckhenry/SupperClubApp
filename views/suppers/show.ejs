@@ -10,6 +10,7 @@
 </div>
 
 <address style="display:none"><%= supper.address[0].postCode %></address>
+
 <div class="box box-10"> 
   <div id="supper-information">
     <div class="container">
@@ -31,12 +32,12 @@
             <p class="medium text-center">Veggie</p>
             </li>
           <li class="box box-3">
-            < <% if (supper.menu[0].vegan === true) { %>
-                                <i class="text-center fa fa-check"></i>
-                            <% } else { %>
-                                <i class="text-center fa fa-times"></i>
-                            <% } %>
-                            <p class="medium text-center">Vegan</p>
+             <% if (supper.menu[0].vegan === true) { %>
+              <i class="text-center fa fa-check"></i>
+              <% } else { %>
+              <i class="text-center fa fa-times"></i>
+              <% } %>
+              <p class="medium text-center">Vegan</p>
             </li>
         </ul>
      </div>

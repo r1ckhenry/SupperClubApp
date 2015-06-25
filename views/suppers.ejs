@@ -1,22 +1,35 @@
 <%- include templates/_head.ejs %>
-<body>
+<body style="background: #e5e5e5;">
+<%- include templates/_header.ejs %>
+
+  
   <% for (var i = 0; i < supper.length; i++) { %>
-    <a href="/suppers/<%= supper[i].id %>"<p><%= supper[i].description %> </p></a>
-    <p><%= supper[i].dressCode %> </p>
-    <h4>Menu:</h4>
-   <p>Drinks: <%= supper[i].menu[0].drinks %> </p>
-    <p>Cuisine: <%= supper[i].menu[0].cuisine %> </p>
-    <p>Dishes: <%= supper[i].menu[0].dishes %> </p>
-    <p>Veggie: <%= supper[i].menu[0].veggie %> </p>
-    <p>Vegan: <%= supper[i].menu[0].vegan %> </p> 
-    <img src = <%= supper[i].image %> />
-
-    <form action="/suppers/<%= supper[i]._id %>" method="POST">
-      <input type="submit" value="delete">
-    </form>
+    <div class="supper-card">
+        <a href="/suppers/<%= supper[i].id %>"</a>
+        <img src = <%= supper[i].image %> />
+          <d iv class="supper-card-content">
+            <p class="lead"> <%=supper[i].title%></p>
+            <p class="small-alert-header">Location: <%= supper[i].address[0].city %></p>
+            <h4>Menu:</h4>
+            <p>Dishes: <%= supper[i].menu[0].dishes %> </p>
+          <div class="box box-5">
+              <p> <% if (supper[i].menu[0].veggie === true) { %>
+              <i class="text-center fa fa-check"></i>
+              <% } else { %>
+              <i class="text-center fa fa-times"></i>
+              <% } %>
+              <p class="medium text-center">Veggie</p>
+            </div>
+          <div class="box box-5">
+             <% if (supper[i].menu[0].vegan === true) { %>
+             <i class="text-center fa fa-check"></i>
+             <% } else { %>
+             <i class="text-center fa fa-times"></i>
+             <% } %>
+             <p class="medium text-center">Vegan</p> 
+          </div>
+      </div>
   <% }; %>
-
-<button id="supper-add"><a href="/suppers/new">Add a Supper</a></button>
 
 </body>
 </html>
