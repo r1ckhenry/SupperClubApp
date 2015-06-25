@@ -1,33 +1,119 @@
 <%- include templates/_head.ejs %>
 <body>
-<div class="container">
 
-    <div class="page-header text-center">
+<!--     <div class="page-header text-center">
         <h1><span class="fa fa-anchor"></span> Profile Page</h1>
         <a href="/logout" class="btn btn-default btn-sm">Logout</a>
         <a href="/profile/edit" class="btn btn-default btn-sm">Edit</a>
     </div>
+ -->
+<%- include templates/_header.ejs %>
 
-    <div class="row">
-
-        <!-- LOCAL INFORMATION -->
-        <div class="col-sm-6">
-            <div class="well">
-                <h3><span class="fa fa-user"></span> <%= user.name %> </h3>
-                    <p>
-                        <strong>id</strong>: <%= user._id %><br>
-                        <strong>email</strong>: <%= user.email %><br>
-                        <strong>password</strong>: <%= user.password %>
-                    </p>
-                    <p>faveCuisines: <%= user.faveCuisines %></p>
-            </div>
+        <div class="host-suppers" style="background-color: red">
+            <h2>Suppers you are hosting</h2>
+            <% for(var i = 0; i < result.length; i++) { %>
+              <% if (String(result[i].userid) === String(user.id)) { %>
+                <div class="supper-card">
+                    <img src="<%= result[i].image%>">
+                    <p class='lead'><%= result[i].title %></p>
+                    <p><%= result[i].dressCode %></p>
+                    <p><%= result[i].date %></p>
+                    <p><%= result[i].address[0].firstLine %></p>
+                    <p><%= result[i].address[0].secondLine %></p>
+                    <p><%= result[i].address[0].city %></p>
+                    <p><%= result[i].address[0].postCode %></p>
+                    <p><%= result[i].menu[0].veggie %></p>
+                    <p><%= result[i].menu[0].vegan %></p>
+                    <p><%= result[i].menu[0].dishes %></p>
+                    <p><%= result[i].menu[0].drinks %></p>
+                </div>
+              <% } %>
+            <% } %>      
         </div>
 
-        <p>suppers attending:<%= user.suppersAttending %></p>
-        <p>suppers created: <%= user.suppersCreated %></p>
+        <div class="attend-suppers">
+            <h2>Suppers you are attending</h2>
+            <% for(var i = 0; i < result.length; i++) { %>
+              <% if (String(result[i].userid) !== String(user.id)) { %>
+                <div class="supper-card">
+                    <img src="<%= result[i].image%>">
+                    <p class='lead'><%= result[i].title %></p>
+                    <p><%= result[i].dressCode %></p>
+                    <p><%= result[i].date %></p>
+                    <p><%= result[i].address[0].firstLine %></p>
+                    <p><%= result[i].address[0].secondLine %></p>
+                    <p><%= result[i].address[0].city %></p>
+                    <p><%= result[i].address[0].postCode %></p>
+                    <p><%= result[i].menu[0].veggie %></p>
+                    <p><%= result[i].menu[0].vegan %></p>
+                    <p><%= result[i].menu[0].dishes %></p>
+                    <p><%= result[i].menu[0].drinks %></p>
+                </div>
+              <% } %>
+            <% } %> 
+        </div>
 
-    </div>
+        <br>
+        <p><% result %></p> 
 
-</div>
+        <p>suppers attending:<% user.suppersAttending %></p>
+        <% for(var i = 0; i < user.suppersAttending.length; i++) { %>
+          <% user.suppersAttending[i].userid === user.id %>
+        <% } %>
+        <p>suppers created: <% user.suppersCreated %></p>
+        <% for(var i = 0; i < user.suppersCreated.length; i++) { %>
+          <% user.suppersCreated[i].userid === user.id %>
+        <% } %>
+
+    <section class="white-section">
+        <div class="container">
+            <div class="pull-right">
+                <a href="/logout" class="btn btn-sec">Logout</a>
+                <a href="/profile/edit" class="btn btn-prim">Edit</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="show-profile">
+                <ul>        
+                    <li>
+                        <div class="box box-5">Image</div>
+                        <div class="box box-5"><%= user.name %></div>                
+                    </li>
+                    <li>
+                        <div class="box box-5">Name</div>
+                        <div class="box box-5"><%= user.name %></div>
+                    </li>
+                    <li>
+                        
+                        <div class="box box-5">Email</div>
+                        <div class="box box-5"><%= user.email %></div>
+                    </li>
+                    <li>
+                        <div class="box box-5">Bio</div>
+                        <div class="box box-5"><%= user.bio %></div>
+                    </li>
+                    <li>
+                        <div class="box box-5">faveCuisines</div>
+                        <div class="box box-5"><%= user.faveCuisines %></div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="show-profile">
+                <ul>        
+                    <li>
+                        <div class="box box-5">Suppers attending</div>
+                        <div class="box box-5"><%= user.suppersAttending %></div>                
+                    </li>
+                    <li>
+                        <div class="box box-5">Suppers created</div>
+                        <div class="box box-5"><%= user.suppersCreated %></div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
 </body>
 </html>
