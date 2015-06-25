@@ -70,4 +70,15 @@ small {
   width: 100%;
 }
 
+.booking-header {
+  background-color: rgba(50,50,50,0.5);
+  padding: 10px 10px;
+  margin-top: -45px;
+  color: white;
+}
+
+.booking-content {
+  border: 2px solid gray;
+}
+
 
