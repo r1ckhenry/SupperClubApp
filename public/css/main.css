@@ -348,7 +348,7 @@ img {
   margin: 0px 10px;
   background-color: white;  
   border-radius: 6px;
-
+  white-space: initial;
 }
 
 .supper-card p {
