@@ -40,9 +40,6 @@ $(document).ready(function(){
 
 
           $('#searchresults').append(searchCard);
-          // $('#searchresults').append('<h4>'+element.title+'</h4>');
-          // $('#searchresults').append('<img src="'+element.image+'"/>');
-          // $('#searchresults').append('<a href="/suppers/'+supperId+'">ViewInfo</a></div>');
         })
       })
     }
