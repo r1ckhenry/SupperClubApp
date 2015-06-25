@@ -1,4 +1,7 @@
 
+
+
+
 #supper-image{
   width: 100%;
   text-align: center;
@@ -20,9 +23,26 @@
   text-decoration: underline;
 }
 
+#notify{
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  background-color: gray;
+  margin: 3px;
+}
+
 #attend-button{
   background-color: #f2784b;
   border: 1px solid #e74c3c;
   color: white;
   text-decoration: none;
+  margin: 3px;
+  display: inline-block;
 }
+
+#attend-button input {
+  width: 100%;
+  float: right;
+}
+
+
