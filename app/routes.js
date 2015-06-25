@@ -94,13 +94,30 @@ module.exports = function(app, passport, db) {
         }
     })
   });
+
     
     app.post('/suppers/:id', isLoggedIn, function(req, res){
+        console.log(req.params)
         req.user.suppersAttending.push(req.params.id);
         req.user.save(function(err, supper){
             console.log(err, supper);
+            // res.redirect('/suppers/'+req.params.id);
+            res.send(req.flash('info'))
         });
     })
+
+    //DELETE METHOD
+      app.post("/suppers/:id/delete", isLoggedIn, function(req, res){
+        console.log(req.params);
+        var supperId = req.params.id;
+        db.Supper.findByIdAndRemove({
+          _id: supperId
+        }, function(err, supper){
+          res.redirect('/profile')
+        })
+      })
+
+    
 
     app.post('/suppers', function(req, res) {
     var user = req.user;
@@ -133,7 +150,6 @@ module.exports = function(app, passport, db) {
       }
     }, function(err, supper){
         req.user.suppersCreated.push(supper._id);
-        console.log(supper);
         req.user.save(function(err){
         });
         res.redirect('/suppers/' + supper._id);
