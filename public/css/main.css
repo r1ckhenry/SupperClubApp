@@ -239,6 +239,10 @@ img {
   font-weight: 200;
 }
 
+.big-hero span{
+  font-weight: 400;
+}
+
 .small-hero {
   font-size: 18px;
   font-weight: 300;
@@ -344,7 +348,7 @@ img {
   margin: 0px 10px;
   background-color: white;  
   border-radius: 6px;
-
+  white-space: initial;
 }
 
 .supper-card p {
