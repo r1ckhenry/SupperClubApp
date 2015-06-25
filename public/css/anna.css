@@ -18,8 +18,13 @@ small {
 
 #supper-information{
   background-color: white;
-  border-top: 1px solid #e5e5e5;  
+  border-top: 1px solid #e5e5e5;   
 }
+
+#supper-information li {
+  text-align: center;
+}
+
 .supper-header{
   font-size: 20px;
   text-decoration: underline;
@@ -28,6 +33,15 @@ small {
 #supper-image{
   height: 400px;
   overflow: hidden;
+}
+
+#supper-description {
+  background-color: #FFFBFC;
+  color: gray;
+}
+
+#map{
+  width: 100%;
 }
 
 #notify{
