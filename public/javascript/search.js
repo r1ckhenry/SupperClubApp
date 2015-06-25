@@ -34,7 +34,7 @@ $(document).ready(function(){
       $.get('/suppers/' + supperId, function(response){
         $.each($(response), function(index,element) {
           console.log(element)
-          var searchCard = '<div class="box box-2 supper-card"><img class="search-img" src="'+element.image+'"/>';
+          var searchCard = '<div class="box box-2 supper-card animated slideInUp"><img class="search-img" src="'+element.image+'"/>';
               searchCard += '<div class="supper-card-content"><p class="lead">'+element.title+'</p>';
               searchCard += '<div class="home-card-date"><small>'+element.date+'"</small></div>';
               searchCard += '<p class="small-alert-header">Menu:</p><p class="small">'+element.menu[0].dishes[0]+'</p><hr>'

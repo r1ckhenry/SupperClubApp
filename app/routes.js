@@ -114,7 +114,7 @@ module.exports = function(app, passport, db) {
       description : sup.description,
       dressCode: sup.dressCode,
       date: dateTime,
-      guest: sup.guest,
+      guest: sup.guestNumber,
       image: sup.image,
       userid: req.user._id,
       title: sup.title,
