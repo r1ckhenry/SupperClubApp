@@ -16,6 +16,22 @@
   height: 70px;
 }
 
+.new-supper-form input[type="checkbox"] {
+  display: inline-block;
+  width: 5%;
+  margin-bottom: 0px;
+  vertical-align: middle;
+}
+
+.vAlign {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.new-supper-form .submit {
+  display: block;
+}
+
 .left-supper, .right-supper {
   padding: 15px;
 }
@@ -24,5 +40,6 @@
   font-weight: 200;
   font-family: 'Raleway';
   text-align: center;
-  padding:5px;
+  padding: 20px 0;
+  margin: 0px 0;
 }

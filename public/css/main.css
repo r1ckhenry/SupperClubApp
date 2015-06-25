@@ -9,7 +9,12 @@
 }
 
 .white-section {
-  background-color: #e5e5e5;
+  background-color: rgba(229,229,229,0.8);
+  height: 100%;
+}
+
+body, html {
+  height: 100%;
 }
 
 body {
@@ -91,7 +96,6 @@ hr {
 .global-nav {
   height: 60px;
   background-color: rgba(59,68,75,1);
-  margin-bottom: 30px;
 }
 
 .global-nav a {
