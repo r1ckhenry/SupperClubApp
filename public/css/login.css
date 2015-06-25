@@ -13,7 +13,7 @@
 .login-box {
   display: block;
   margin: 0 auto;
-  background-color:rgba(59,68,75,.6);
+  background-color:rgba(59,68,75,.9);
   margin-top: 150px;
   width:300px;
   padding: 10px;
@@ -29,7 +29,8 @@
 }
 
 .form-group input {
-  width: 100%;
+  width: 95%;
+  color: #333;
 }
 
 .form-group label {
@@ -49,4 +50,16 @@
 
 .login{
   text align:right;
+}
+
+.show-btns {
+  display: block;
+  height: 1px;
+  margin-top: 20px;
+}
+
+.profile-pic {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }

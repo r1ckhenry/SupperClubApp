@@ -9,14 +9,13 @@
   </div>
 </div>
 
-       
+<address style="display:none"><%= supper.address[0].postCode %></address>
 <div class="box box-10"> 
   <div id="supper-information">
     <div class="container">
       <div class="box box-7">
-        <p class="supper-title"><%= supper.title %></p>
-        <large><%= supper.address[0].city %></large>
-        <small><%= supper.date %></small>
+        <p class="show-lead"><%= supper.title %></p>
+        <p class="show-medium"><%= supper.date %></p>
         <ul>
           <li class="box box-3">
             <div><i class="fa fa-users"></i></div>
@@ -36,6 +35,7 @@
        <div class="booking-form">
          <div class="booking-header">
             Attend this supper
+            <span class="small pull-right"><%= supper.address[0].city %></span>
           </div>
           <div id="notify"></div>
           <div class="booking-content">
@@ -58,25 +58,25 @@
    <div class="container">
     <div class="box box-6 " id="supper-description">
        <div class="box box-10">
-            <h3>Description</h3>
-            <p> <%= supper.description %></p>
+            <h3 class="listing-heading">About this supper</h3>
+            <p class="medium"> <%= supper.description %></p>
                  <div class="box box-10" id="supper-info">
-                    <h3>Supper Information</h3>
+                    <h3 class="listing-heading">Supper Information</h3>
                   </div>   
                   <div id="cuisine">
                       <div class="box box-4">
-                         <h4>Cuisine</h4>
+                         <p class="medium">Cuisine</p>
                       </div> 
                        <div class="box box-6">
-                         <p><%= supper.menu[0].cuisine %></p>
+                         <p class="small"><%= supper.menu[0].cuisine %></p>
                         </div>  
                     </div4>
                     <div id="dishes">
                         <div class="box box-4">
-                        <h4>Dishes</h4>
+                        <p class="medium">Dishes</p>
                         </div>
                         <div class="box box-6">
-                         <p><%= supper.menu[0].dishes %></p>
+                         <p class="small"><%= supper.menu[0].dishes %></p>
                       </div>   
                     </div>  
                </div>
@@ -88,7 +88,7 @@
   
     
     <div class="box box-10" id="map-wrapper">
-      <div class="box box-7" id="map" style="width:100%; height:200px;">
+      <div class="box box-7" id="map" style="width:100%; height:400px;">
       </div>
     </div>  
    

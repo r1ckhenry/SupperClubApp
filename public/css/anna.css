@@ -17,7 +17,7 @@ small {
 
 #supper-information{
   background-color: white;
-  border-top: 1px solid #e5e5e5;   
+  border: 1px solid #e5e5e5;   
 }
 
 #supper-information li {
@@ -35,23 +35,22 @@ small {
 }
 
 #supper-description {
-  background-color: #FFFBFC;
   margin: 10px;
   padding: 5px;
   color: gray;
 }
 
 #supper-info {
-  border-top: 1px dotted grey;
+  border-top: 1px dotted #e5e5e5;
 }
 
 #cuisine {
-  border-top: 1px dotted grey;
+  border-top: 1px dotted #e5e5e5;
 
 }
 
 #dishes {
-  border-top: 1px dotted grey;
+  border-top: 1px dotted #e5e5e5;
   
 }
 
@@ -80,9 +79,9 @@ small {
 }
 
 .booking-header {
-  background-color: rgba(50,50,50,0.5);
+  background-color: rgba(59,68,75,1);
   padding: 10px 10px;
-  margin-top: -45px;
+  margin-top: -40px;
   color: white;
 }
 
@@ -104,4 +103,27 @@ small {
   width: 25%;
 }
 
+.pink-section {
+  background-color: #f9f9f9;
+}
 
+.show-lead {
+  font-size: 26px;
+  font-weight: 300;
+  color: #c1c1c1;
+  margin-bottom: 0px;
+}
+
+.show-medium {
+  margin-top: 0px;
+  font-size: 13px;
+}
+
+i {
+  color: #ff5a5f;
+}
+
+.listing-heading {
+  font-weight: 500;
+  font-size: 13px;
+}

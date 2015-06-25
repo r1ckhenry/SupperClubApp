@@ -96,17 +96,22 @@
 
     <section class="white-section">
         <div class="container">
-            <div class="pull-right">
-                <a href="/logout" class="btn btn-sec">Logout</a>
-                <a href="/profile/edit" class="btn btn-prim">Edit</a>
+            <div class="show-btns">
+                <div class="pull-right">
+                    <a href="/logout" class="btn btn-sec">Logout</a>
+                    <a href="/profile/edit" class="btn btn-prim">Edit</a>
+                </div>      
             </div>
+
         </div>
         <div class="container">
             <div class="show-profile">
                 <ul>        
                     <li>
                         <div class="box box-5">Image</div>
-                        <div class="box box-5"><%= user.name %></div>                
+                        <div class="box box-5">
+                            <img class="profile-pic" src="<%= user.image %>">
+                        </div>                
                     </li>
                     <li>
                         <div class="box box-5">Name</div>

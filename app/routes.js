@@ -136,7 +136,7 @@ module.exports = function(app, passport, db) {
         console.log(supper);
         req.user.save(function(err){
         });
-        res.redirect('/suppers');
+        res.redirect('/suppers/' + supper._id);
     });
   })
 
@@ -173,7 +173,7 @@ module.exports = function(app, passport, db) {
     // =====================================
     app.get('/logout', function(req, res) {
         req.logout();
-        res.redirect('/test');
+        res.redirect('/login');
     });
 };
 
@@ -185,5 +185,5 @@ function isLoggedIn(req, res, next) {
         return next();
 
     // if they aren't redirect them to the home page
-    res.redirect('/test');
+    res.redirect('/login');
 }
