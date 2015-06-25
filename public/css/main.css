@@ -158,11 +158,16 @@ hr {
   text-decoration: none;
   color: white;
   font-weight: 100;
-  font-family: 'Titillium Web', sans-serif;
   letter-spacing: .8px;
+  font-size: 12px;
 }
 
-.brand {
+.global-menu .btn {
+  font-size: 14px;
+  padding: 8px;
+} 
+
+.brand  a {
   display: inline-block;
   float: left;
   padding: 14px 10px;
@@ -170,13 +175,14 @@ hr {
   font-weight: 200;
   font-size: 28px; 
   color: white;
+  text-decoration: none;
 }
 
 img {
   max-width: 100%;
 }
 
-.brand span {
+.brand a span {
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
 }
@@ -184,14 +190,15 @@ img {
 /*****BUTTONS*****/
 
 .btn {
-  padding: 1px 4px;
+  padding: 4px 8px;
+  margin: 10px 0;
   border-radius: 3px;
   border: 1px solid transparent;
   text-decoration: none;
 }
 
 .btn-prim {
-  background-color: #f2784b;
+  background-color: #ff5a5f;
   border: 1px solid #e74c3c;
   color: white;
 }
@@ -205,6 +212,10 @@ img {
 .btn-sec:hover {
   background-color: rgba(255,255,255,0.6);
 
+}
+
+.btn-card {
+  margin-top: 20px;
 }
 
 
@@ -250,7 +261,6 @@ img {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space:nowrap;
-  height: 400px;
 }
 
 .search-card {
@@ -275,6 +285,10 @@ img {
   text-align: center;
   display: block;
   margin: 0 auto;
+}
+
+.home-card-date {
+  margin-bottom: 10px;
 }
 
 /***PROFILE SECTION *****/

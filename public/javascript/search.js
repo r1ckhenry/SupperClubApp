@@ -1,10 +1,11 @@
 $(document).ready(function(){
-// eventListener on input
+  // eventListener on input
   $("#search-form").on("keyup", function(e){
     e.preventDefault();
     getMenuResults();
-
   })
+  // show cards on doc load
+  getMenuResults();
 
   $('#searchresults').on("click", function(e){
      bookSupper();
@@ -16,6 +17,7 @@ $(document).ready(function(){
 
     $.post('/searchresults', { location: $('.form-input').val() },
       function(response){
+        console.log(response)
        var val = $('.form-input').val()
         $.each($(response), function(index, item){
          var location =  item.address[0].city
@@ -32,13 +34,11 @@ $(document).ready(function(){
       $.get('/suppers/' + supperId, function(response){
         $.each($(response), function(index,element) {
           console.log(element)
-          var searchCard = '<div class="box box-2 search-card"><img class="search-img" src="'+element.image+'"/>';
-              searchCard += '<div class="card-info"><h4>'+element.title+'</h4>';
-              searchCard += '<p>'+element.guest+'"</p>';
-              searchCard += '<a class="btn btn-prim" href="/suppers/'+supperId+'">ViewInfo</a></div></div>';
-
-
-
+          var searchCard = '<div class="box box-2 supper-card"><img class="search-img" src="'+element.image+'"/>';
+              searchCard += '<div class="supper-card-content"><p class="lead">'+element.title+'</p>';
+              searchCard += '<div class="home-card-date"><small>'+element.date+'"</small></div>';
+              searchCard += '<p class="small-alert-header">Menu:</p><p class="small">'+element.menu[0].dishes[0]+'</p><hr>'
+              searchCard += '<div class="btn-card"><a class="btn btn-prim small" href="/suppers/'+supperId+'">More Info</a></div></div></div>';
           $('#searchresults').append(searchCard);
         })
       })
