@@ -6,7 +6,7 @@ $(document).ready(function(){
   $('.attending').on('click', function(e){
     e.preventDefault();
     $('.booking-content').empty()
-    $('#notify').append("You're going to this supper!");
+    $('.booking-content').append("Yeah!Off too dinner you should go");
     
     $.get(pathname, function(response){
       console.log(response);
