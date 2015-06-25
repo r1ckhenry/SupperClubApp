@@ -57,32 +57,21 @@ module.exports = function(app, passport, db) {
     // we will use route middleware to verify this (the isLoggedIn function)
     app.get('/profile', isLoggedIn, function(req, res) {
 
-        // console.log(req.user.suppersCreated)
-        // console.log(req.user.suppersAttending)
+    var supperArray = req.user.suppersAttending.concat(req.user.suppersCreated)
 
-        // // db.Supper.find({_id: {$in:req.user.suppersCreated}}, function(err, suppers){
-        // //     return suppers;
-        // // })
-        //  // console.log(suppersCreated, suppersAttending)
-
+      db.Supper.find({ 
+        _id : { $in : supperArray }
+      })
+      .exec(function(err, result) { 
+        if(err) console.log(err);
+        // console.log(result);
         res.render('profile.ejs', {
-            user: req.user
-         })
+          user: req.user,
+          result: result
+        })
+      });
 
-        // var query = db.Supper.find();
 
-        // query.and([{_id: '558a6e6cadc14c0b0bd4d50e'}, {_id: '5589681782c4a68e39a0c014'}])
-
-        // // db.Supper.find({})
-        // // .where('_id')
-        // // .and([{$in:req.user.suppersCreated}, {$in:req.user.suppersAttending}])
-        // // .in(req.user.suppersCreated)
-        // // .and
-        // // .where('_id')
-        // // .in(req.user.suppersAttending)
-        // .exec(function(err, suppers) {
-        //     console.log(suppers);
-        // });
     });
 
 
@@ -127,7 +116,7 @@ module.exports = function(app, passport, db) {
       date: dateTime,
       guest: sup.guest,
       image: sup.image,
-      userid: req.user.id,
+      userid: req.user._id,
       title: sup.title,
       address: {
         firstLine: sup.firstLine,
@@ -152,8 +141,6 @@ module.exports = function(app, passport, db) {
   })
 
 
-
-
     app.get('/profile/edit', isLoggedIn, function(req, res){
         res.render('profile/edit.ejs', {
             user : req.user
@@ -164,16 +151,20 @@ module.exports = function(app, passport, db) {
         if (req.xhr) {
             req.user.faveCuisines.push(req.body.newCountry);
             req.user.save(function(err){
-                console.log(req.user);
+                // console.log(req.user);
             });
         } else {
             db.User.findById(req.user._id, function(err, user){
-            user.name = req.body.name;
+                console.log(req.body)
+                user.name = req.body.name;
+                user.image = req.body.image;
+                user.bio = req.body.bio;
             user.save(function(err){
                 console.log(err)
+                res.redirect('/profile');
             });
         });
-        res.redirect('/profile');
+        
         }
     });
 
