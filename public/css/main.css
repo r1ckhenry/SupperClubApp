@@ -24,6 +24,12 @@ body {
  -o-background-size: cover;
  background-size: cover;
  font-family: 'Raleway', sans-serif;
+ font-weight: 200;
+ letter-spacing: 0.67px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
 }
 
 input {
@@ -309,9 +315,11 @@ img {
   border-radius: 3px;
 }
 
-.host-suppers {
+.host-suppers, .attend-suppers {
   background-color: #e5e5e5;
   width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden; 
 }
 
 .supper-card {
