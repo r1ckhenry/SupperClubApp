@@ -101,8 +101,8 @@ module.exports = function(app, passport, db) {
         req.user.suppersAttending.push(req.params.id);
         req.user.save(function(err, supper){
             console.log(err, supper);
-            // res.redirect('/suppers/'+req.params.id);
-            res.send(req.flash('info'))
+            res.redirect('/suppers/'+req.params.id);
+            // res.send(req.flash('info'))
         });
     })
 
