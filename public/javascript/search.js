@@ -1,7 +1,7 @@
 $(document).ready(function(){
   // eventListener on input
   $("#search-form").on("keyup", function(e){
-    e.preventDefault();
+    // e.preventDefault();
     getMenuResults();
   })
   // show cards on doc load
