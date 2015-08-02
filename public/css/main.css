@@ -180,6 +180,7 @@ hr {
 
 img {
   max-width: 100%;
+  max-height: 150%;
 }
 
 .brand a span {
@@ -190,7 +191,7 @@ img {
 /*****BUTTONS*****/
 
 .btn {
-  padding: 4px 8px;
+  padding: 4px 15px;
   margin: 10px 0;
   border-radius: 3px;
   border: 1px solid transparent;
