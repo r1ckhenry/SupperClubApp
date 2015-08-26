@@ -1,0 +1,53 @@
+<%- include templates/_head.ejs %>
+<body style="background: #e5e5e5;">
+<%- include templates/_header.ejs %>
+
+  
+  <% for (var i = 0; i < supper.length; i++) { %>
+    <div class="supper-card">
+        <a href="/suppers/<%= supper[i].id %>"</a>
+        <img src = <%= supper[i].image %> />
+          <d iv class="supper-card-content">
+            <p class="lead"> <%=supper[i].title%></p>
+            <p class="small-alert-header">Location: <%= supper[i].address[0].city %></p>
+            <h4>Menu:</h4>
+            <p>Dishes: <%= supper[i].menu[0].dishes %> </p>
+          <div class="box box-5">
+              <p> <% if (supper[i].menu[0].veggie === true) { %>
+              <i class="text-center fa fa-check"></i>
+              <% } else { %>
+              <i class="text-center fa fa-times"></i>
+              <% } %>
+              <p class="medium text-center">Veggie</p>
+            </div>
+          <div class="box box-5">
+             <% if (supper[i].menu[0].vegan === true) { %>
+             <i class="text-center fa fa-check"></i>
+             <% } else { %>
+             <i class="text-center fa fa-times"></i>
+             <% } %>
+             <p class="medium text-center">Vegan</p> 
+          </div>
+      </div>
+  <% }; %>
+
+</body>
+</html>
+
+<!-- { 
+  _id: 5589681782c4a68e39a0c014, 
+  description: 'Join me', 
+  dressCode: 'Casual', 
+  __v: 0, 
+  reviews: [], 
+  menu: [ { 
+    _id: 5589681782c4a68e39a0c015, 
+    drinks: [Object], 
+    cuisine: [Object], 
+    dishes: [Object] } ], 
+  address: [ { 
+    firstLine: '66', 
+    secondLine: 'Hanbury Street', 
+    city: 'London', 
+    postCode: '4RD 6HY', 
+    _id: 5589681782c4a68e39a0c016 } ] } -->

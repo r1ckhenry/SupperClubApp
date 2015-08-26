@@ -1,0 +1,129 @@
+small {
+  font-size: 12px;
+}
+
+
+#supper-image{
+  width: 100%;
+  text-align: center;
+}
+
+
+#supper-wrapper{
+  /*padding:1%;*/
+  color: white;
+  margin:10%;
+}
+
+#supper-information{
+  background-color: white;
+  border: 1px solid #e5e5e5;   
+}
+
+#supper-information li {
+  text-align: center;
+}
+
+.supper-header{
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+#supper-image{
+  height: 400px;
+  overflow: hidden;
+}
+
+#supper-description {
+  margin: 10px;
+  padding: 5px;
+  color: gray;
+}
+
+#supper-info {
+  border-top: 1px dotted #e5e5e5;
+}
+
+#cuisine {
+  border-top: 1px dotted #e5e5e5;
+
+}
+
+#dishes {
+  border-top: 1px dotted #e5e5e5;
+  
+}
+
+#notify{
+  text-align: center;
+  font-size: 15px;
+  margin: 3px;
+}
+
+#attend-button{
+  background-color: #f2784b;
+  border: 1px solid #e74c3c;
+  color: white;
+  text-decoration: none;
+  margin: 3px;
+  display: inline-block;
+}
+
+#attend-button input {
+  width: 100%;
+  float: right;
+}
+
+#supper-image img {
+  width: 100%;
+}
+
+.booking-header {
+  background-color: rgba(59,68,75,1);
+  padding: 10px 10px;
+  margin-top: -40px;
+  color: white;
+}
+
+.booking-content {
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+  padding: 10px;
+  height: 96px;
+}
+
+.booking-button {
+  border: 1px solid #e5e5e5;
+  background-color: white;
+  padding: 10px;
+}
+
+.booking-form {
+  position: absolute;
+  width: 25%;
+}
+
+.pink-section {
+  background-color: #f9f9f9;
+}
+
+.show-lead {
+  font-size: 26px;
+  font-weight: 300;
+  color: #c1c1c1;
+  margin-bottom: 0px;
+}
+
+.show-medium {
+  margin-top: 0px;
+  font-size: 13px;
+}
+
+i {
+  color: #ff5a5f;
+}
+
+.listing-heading {
+  font-weight: 500;
+  font-size: 13px;
+}

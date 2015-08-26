@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>SupperClub App</title>
-</head>
+<%- include templates/_head.ejs %>
+
 <body>
-  <h1>SupperClub App!</h1>
+
+<%- include templates/_header.ejs %>
+
+
+  <div class="hero">
+
+    <div class="big-hero"><span class="brand">Supper</span>Club</div>
+    <div class="small-hero">Dinner is better when we eat together</div>
+
+    <a href="/how" class="btn btn-sec">How it works</a>
+  </div>
+
+  <section class="search-bar">
+    <form action="/searchresults" method="POST" id="search-form">
+      <input name="location" class="form-input" placeholder="where do you want to dine?">
+    </form>
+  </section>
+
+  <div id="searchresults">
+          
+  </div>
+
 </body>
 </html>

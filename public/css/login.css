@@ -1,0 +1,65 @@
+.hero-login{
+  padding:1px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.box h1{
+  font-weight: 300;
+  font-size: 24px; 
+  color: white;
+}
+
+.login-box {
+  display: block;
+  margin: 0 auto;
+  background-color:rgba(59,68,75,.9);
+  margin-top: 150px;
+  width:300px;
+  padding: 10px;
+}
+
+.login-box h1{
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 10px;
+  color: white;
+}
+
+.form-group input {
+  width: 95%;
+  color: #333;
+}
+
+.form-group label {
+  font-size:14px;
+  padding:1px;
+}
+
+.signup-bottom p {
+  color:white;
+  font-weight: 300;
+}
+
+.signup-bottom a {
+  color:white;
+  font-weight: 300;
+}
+
+.login{
+  text align:right;
+}
+
+.show-btns {
+  display: block;
+  height: 1px;
+  margin-top: 20px;
+}
+
+.profile-pic {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}

@@ -1,0 +1,76 @@
+<%- include ../templates/_head.ejs %>
+<body style="background: #e5e5e5;">
+<%- include ../templates/_header.ejs %>
+
+
+  <section class="white-section">
+        <div class="container">
+          <div class="show-btns">
+              <div class="pull-right">
+                <a href="/logout" class="btn btn-sec">Logout</a>
+                <a href="/profile" class="btn btn-sec">Back to profile</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="container">
+            <div class="show-profile">
+
+              <ul>
+                  <form action="/profile" method="POST">
+                    <li>
+                      <label>Name:</label>
+                      <input id="editName" name="name" type="text" value="<%= user.name %>">       
+                    </li>
+                    <li>
+                      <label>Image:</label>
+                      <input id="editImg" name="image" type="text" value="<%= user.image %>">   
+                    </li>
+                    <li>
+                      <label>Bio:</label>
+                      <input id="editBio" name="bio" type="text" value="<%= user.bio %>">
+                    </li>
+                    <li>
+                      <input class="btn btn-prim" type="submit">             
+                    </li>
+                  </form>                
+              </ul>
+
+            </div>
+
+            <div class="show-profile">
+              <ul>
+                <li>
+                  <div class="box-box-5">
+                    <input id="cuisineSearchInput" type="text" placeholder="search for cuisine">
+                    <ul id="showCuisinesList"></ul>              
+                  </div>
+                </li>
+              </ul>
+
+
+              <div class="box-box-5">
+                <ul id="faveCuisineBoard">
+                    <%  user.faveCuisines.forEach(function(e,i){ %>
+                      <li class="faveCuisineBtn"><%= e %></li>
+                    <% }); %>
+                </ul>
+              </div>
+            </div>
+        </div>
+    </section>
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

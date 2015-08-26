@@ -1,0 +1,371 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:500,800,700,100,900,400,300);
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,200italic,300italic,400italic,600,600italic,700);
+/***GLOBAL****/
+
+.container {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+
+.white-section {
+  background-color: rgba(229,229,229,1);
+  height: 100%;
+}
+
+body, html {
+  height: 100%;
+}
+
+body {
+  background: url('http://www.lovethispic.com/uploaded_images/38589-Outdoor-Dinner-Party.jpg') no-repeat center center fixed; 
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 200;
+ letter-spacing: 0.67px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+}
+
+input {
+  border: 0px;
+  border-radius: 2px;
+  padding-left: 5px;
+  height: 30px;
+  width: 25%;
+  background-color: rgba(255,255,255,0.9);
+  outline: none;
+}
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+.pull-right {
+  float: right;
+}
+
+.lead {
+  font-size: 18px;
+  font-weight: 100;
+  color: #c1c1c1; 
+}
+
+.small {
+  font-size: 12px;
+}
+
+.medium {
+  font-size: 14px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.small-alert-header {
+  color: #ff5a5f;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 15px 0;
+}
+
+/********GRIDS*********/
+
+.box {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: -4px;
+}
+
+.box-1 {
+  width: 10%;
+}
+
+.box-2 {
+  width: 20%;
+}
+
+.box-3 {
+  width: 30%;
+}
+
+.box-4 {
+  width: 40%;
+}
+
+.box-5 {
+  width: 50%;
+}
+
+.box-6 {
+  width: 60%;
+}
+
+.box-7 {
+  width: 70%;
+}
+
+.box-8 {
+  width: 80%;
+}
+
+.box-9 {
+  width: 90%;
+}
+
+.box-10 {
+  width: 100%;
+}
+
+
+/****NAV*****/
+
+.global-nav {
+  height: 61px;
+  background-color: rgba(59,68,75,1);
+}
+
+.global-nav a {
+  font-size:14px;
+}
+
+.global-menu {
+  display: inline-block;
+  float: right;
+}
+
+.global-menu ul {
+  list-style: none;
+  padding-left: 0px;
+  padding: 2px 0;
+}
+
+.global-menu ul li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.global-menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: 100;
+  letter-spacing: .8px;
+  font-size: 12px;
+}
+
+.global-menu .btn {
+  font-size: 14px;
+  padding: 8px;
+} 
+
+.brand  a {
+  display: inline-block;
+  float: left;
+  padding: 14px 10px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  font-size: 28px; 
+  color: white;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  max-height: 150%;
+}
+
+.brand a span {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+}
+
+/*****BUTTONS*****/
+
+.btn {
+  padding: 4px 15px;
+  margin: 10px 0;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  text-decoration: none;
+}
+
+.btn-prim {
+  background-color: #ff5a5f;
+  border: 1px solid #e74c3c;
+  color: white;
+}
+
+.btn-sec {
+  background-color: rgba(255,255,255,0.3);
+  color: #c1c1c1;
+  transition: background-color 0.3s;
+}
+
+.btn-sec:hover {
+  background-color: rgba(255,255,255,0.6);
+
+}
+
+.btn-card {
+  margin-top: 20px;
+}
+
+
+/*******HOMEPAGE******/
+
+.hero {
+  text-align: center;
+  color: white;
+  padding: 60px 0;
+  height:150px;
+}
+
+.hero a {
+  color: white;
+  text-decoration: none;
+}
+
+.big-hero {
+  color: white;
+  font-size: 70px;
+  font-weight: 200;
+}
+
+.big-hero span{
+  font-weight: 400;
+}
+
+.small-hero {
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.search-bar {
+  background-color: rgba(0,0,0,0.5);
+  padding: 30px 0;
+}
+
+.search-bar input {
+  display: block;
+  margin: 0 auto;
+}
+
+#searchresults {
+  background-color: #e5e5e5;
+  padding: 30px 0;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space:nowrap;
+}
+
+.search-card {
+  background-color: white;
+  border-radius: 3px;
+  margin: 10px;
+}
+
+.search-img {
+  border-radius: 3px 3px 0 0;
+}
+
+.card-info {
+  padding: 20px;
+}
+
+.card-info h4 {
+  text-align: center;
+}
+
+.card-info a {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.home-card-date {
+  margin-bottom: 10px;
+}
+
+/***PROFILE SECTION *****/
+
+.show-profile {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+  margin-top: 50px;
+}
+
+.show-profile ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.show-profile ul li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+#editImg, #editBio {
+  width: 94%;
+}
+
+#faveCuisineBoard {
+  padding: 20px;
+}
+
+.faveCuisineBtn {
+  display: inline-block;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+  padding: 3px 4px !important;
+  font-size: 12px;
+  background-color: #c0392b;  
+  color: white;
+  border: 0;
+  border-radius: 3px;
+}
+
+.host-suppers, .attend-suppers {
+  background-color: #e5e5e5;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden; 
+  white-space: nowrap;
+}
+
+.supper-card {
+  width: 20%;
+  display: inline-block;
+  margin-right: -4px;
+  vertical-align: top;
+  margin: 0px 10px;
+  background-color: white;  
+  border-radius: 6px;
+  white-space: initial;
+}
+
+.supper-card p {
+  margin: 0px 0px;
+}
+
+.supper-card img {
+  border-radius: 6px 6px 0 0;
+}
+
+.supper-card-content {
+  padding: 20px 10px;
+}
+
+.supper-card-content .fa{
+  display: block;
+  margin-top: 10px;
+}

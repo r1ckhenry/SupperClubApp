@@ -1,0 +1,51 @@
+<%- include ../templates/_head.ejs %>
+<body>
+<%- include ../templates/_header.ejs %>
+
+
+<div class="white-section">
+
+
+<div class="container">
+
+<h1 class="supper-new-h1">CREATE YOUR SUPPER</h1>
+
+ <form action='/suppers' method='POST' id="supper-form" class="form-inline new-supper-form">
+    <div class="box box-5">
+        <div class="left-supper">
+            <input name="title" id="" placeholder="Enter your title here">
+            <textarea name="description" id="" placeholder="Enter your description here"></textarea>
+            <input name="image" type="text" class="form-control" id="new-supper" placeholder="Image URL">
+            <input name="cuisine" type="text" class="form-control" id="new-supper" placeholder="Cuisine">
+            <input name="dishes" type="text" class="form-control" id="new-supper" placeholder="Dish">
+            <input name="drinks" type="text" class="form-control" id="new-supper" placeholder="Drinks">
+            <input name="dressCode" type="text" class="form-control" id="new-supper" placeholder="Dresscode">
+            No. of Guests   <select name="guestNumber" type="integer" id="guestNumber"></select>
+        </div>
+    </div>
+    <div class="box box-5">
+        <div class="right-supper">
+            <input name="firstLine" type="text" class="form-control" id="new-supper" placeholder="First Line">
+            <input name="secondLine" type="text" class="form-control" id="new-supper" placeholder="Second Line">
+            <input name="city" type="text" class="form-control" id="new-supper" placeholder="City">
+            <input name="postCode" type="text" class="form-control" id="new-supper" placeholder="Postcode">
+            <input type="datetime-local" name="date" class="form-control" >
+            <input type="checkbox" class="checkbox"  name="veggie" /><span class='vAlign'>Veggie</span>
+            <input type="checkbox" class="checkbox" name="vegan" /><span class='vAlign'>Vegan</span>
+            <button type="submit" class="btn btn-prim submit">Add Supper</button>
+        </div>
+    </div>
+
+  </form>
+
+</div>
+
+
+</div>
+
+
+
+ 
+
+</body>
+</html>
