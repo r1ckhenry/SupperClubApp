@@ -1,0 +1,143 @@
+<%- include templates/_head.ejs %>
+<body style="background: #e5e5e5;">
+
+<!--     <div class="page-header text-center">
+        <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+        <a href="/profile/edit" class="btn btn-default btn-sm">Edit</a>
+    </div>
+ -->
+<%- include templates/_header.ejs %>
+     <h2 class="text-center">Suppers you are hosting</h2>
+        <div class="host-suppers">
+            <% for(var i = 0; i < result.length; i++) { %>
+              <% if (String(result[i].userid) === String(user.id)) { %>
+                <div class="supper-card">
+                    <img src="<%= result[i].image%>">
+                    <div class="supper-card-content">
+                        <p class='lead'><%= result[i].title %></p>
+                        <p class='small'><%= result[i].date %></p>
+
+                        <p class="small-alert-header">Location:</p>
+                        
+                        <p class='small'><%= result[i].address[0].firstLine %></p>
+                        <hr>
+                        <p class='small'><%= result[i].address[0].secondLine %></p>
+                        <hr>
+                        <p class='small'><%= result[i].address[0].city %></p>
+                        <hr>
+                        <p class='small'><%= result[i].address[0].postCode %></p>
+                        <hr>
+                        <div class="box box-5">
+                            <% if (result[i].menu[0].veggie === true) { %>
+                                <i class="text-center fa fa-check"></i>
+                            <% } else { %>
+                                <i class="text-center fa fa-times"></i>
+                            <% } %>
+                            <p class="medium text-center">Veggie</p>
+                        </div>
+                        <div class="box box-5">
+                            <% if (result[i].menu[0].vegan === true) { %>
+                                <i class="text-center fa fa-check"></i>
+                            <% } else { %>
+                                <i class="text-center fa fa-times"></i>
+                            <% } %>
+                            <p class="medium text-center">Vegan</p>
+                        </div>
+                        
+                        <form action="/suppers/<%= result[i]._id %>/delete" method="POST">
+                            <input type="submit" value="cancel supper">
+                        </form>
+                    </div>
+                </div>
+              <% } %>
+            <% } %>      
+        </div>
+
+        <h2 class="text-center">Suppers you are attending</h2>
+        <div class="attend-suppers">  
+
+            <% for(var i = 0; i < result.length; i++) { %>
+              <% if (String(result[i].userid) !== String(user.id)) { %>
+                <div class="supper-card">
+                    <img src="<%= result[i].image %>">
+                    <div class="supper-card-content">
+                        <p class='lead'><%= result[i].title %></p>
+                        <p class="small"><%= result[i].date %></p>
+
+                        <p class="small-alert-header">Location:</p>
+
+                        <p class="small"><%= result[i].address[0].firstLine %></p>
+                        <hr>
+                        <p class="small"><%= result[i].address[0].secondLine %></p>
+                        <hr>
+                        <p class="small"><%= result[i].address[0].city %></p>
+                        <hr>
+                        <p class="small"><%= result[i].address[0].postCode %></p>
+                        <hr>
+                        <div class="box box-5">
+                            <% if (result[i].menu[0].veggie === true) { %>
+                                <i class="text-center fa fa-check"></i>
+                            <% } else { %>
+                                <i class="text-center fa fa-times"></i>
+                            <% } %>
+                            <p class="medium text-center">Veggie</p>
+                        </div>
+                        <div class="box box-5">
+                            <% if (result[i].menu[0].vegan === true) { %>
+                                <i class="text-center fa fa-check"></i>
+                            <% } else { %>
+                                <i class="text-center fa fa-times"></i>
+                            <% } %>
+                            <p class="medium text-center">Vegan</p>
+                        </div>
+                    </div>
+                </div>
+              <% } %>
+            <% } %> 
+        </div>
+
+    <section class="white-section">
+        <div class="container">
+            <div class="show-btns">
+                <div class="pull-right">
+                    <a href="/logout" class="btn btn-sec">Logout</a>
+                    <a href="/profile/edit" class="btn btn-prim">Edit</a>
+                </div>      
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="show-profile">
+                <ul>        
+                    <li>
+                        <div class="box box-5">Image</div>
+                        <div class="box box-5">
+                            <img class="profile-pic" src="<%= user.image %>">
+                        </div>                
+                    </li>
+                    <li>
+                        <div class="box box-5">Name</div>
+                        <div class="box box-5"><%= user.name %></div>
+                    </li>
+                    <li>
+                        
+                        <div class="box box-5">Email</div>
+                        <div class="box box-5"><%= user.email %></div>
+                    </li>
+                    <li>
+                        <div class="box box-5">Bio</div>
+                        <div class="box box-5"><%= user.bio %></div>
+                    </li>
+                    <li>
+                        <div class="box box-5">faveCuisines</div>
+                        <div class="box box-5"><%= user.faveCuisines %></div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

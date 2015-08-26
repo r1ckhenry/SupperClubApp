@@ -1,0 +1,45 @@
+.new-supper-form {
+}
+
+.new-supper-form input {
+  width: 100%;
+  border: 0px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.new-supper-form textarea {
+  width: 100%;
+  border: 0px;
+  border-radius: 3px;
+  margin-bottom:  5px;
+  height: 70px;
+}
+
+.new-supper-form input[type="checkbox"] {
+  display: inline-block;
+  width: 5%;
+  margin-bottom: 0px;
+  vertical-align: middle;
+}
+
+.vAlign {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.new-supper-form .submit {
+  display: block;
+}
+
+.left-supper, .right-supper {
+  padding: 15px;
+}
+
+.supper-new-h1 {
+  font-weight: 200;
+  font-family: 'Raleway';
+  text-align: center;
+  padding: 20px 0;
+  margin: 0px 0;
+}
